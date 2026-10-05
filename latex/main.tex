@@ -1,0 +1,84 @@
+\RequirePackage{snapshot}
+\documentclass[a4paper,12pt,oneside]{article}
+%\usepackage[left=30mm, top=20mm, right=20mm, bottom=20mm]{geometry}
+% Использование русских букв в формулах
+\usepackage[warn]{mathtext}
+\usepackage{amsmath}
+\usepackage{fancyref}
+
+\usepackage[figuresright]{rotating}
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage{boxedminipage}
+\usepackage{makeidx}
+\usepackage{url}
+
+% Выбор внутренней Tex-кодировки
+\usepackage[T2A]{fontenc}
+\usepackage{latexsym}
+% Выбор кодовой страницы документа
+%\usepackage[utf8]{inputenc} 
+%\usepackage [latin1]{inputenc}
+
+
+% Выбор языка документа
+%\usepackage[english,russian]{babel}
+\usepackage[english]{babel}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage[table]{xcolor}
+\usepackage{color,soul}
+%\usepackage[dvipsnames]{xcolor} %!!!
+\usepackage{todonotes}
+\usepackage{cite}
+\usepackage{soul}
+\hyphenation{pro-por-tional-ly}
+
+\graphicspath{{img/}} %Setting the graphicspath
+
+\title{CONTRIBUTION from EDM group to be included to \\ SPRINT@NICA CONCEPTUAL DESIGN REPORT \\ ''Search for the electric dipole moment of light nuclei at the NICA complex''}
+
+% \author is typeset in a tabular cell, so the list is wrapped in \parbox to allow line breaks
+\author{\parbox{\dimexpr\textwidth-2\tabcolsep}{\centering\normalsize
+\textbf{JINR:} V.V.~Fimushkin, A.V.~Butenko, E.A.~Butenko, N.V.~Dunin, K.A.~Ivshin,
+M.V.~Kulikov, S.A.~Kostromin, V.P.~Ladygin, V.E.~Laryonov, E.M.~Syresin,
+A.N.~Solovev, I.S.~Volkov, V.A.~Lebedev, E.E.~Donets, V.V.~Bleko,
+N.M.~Piskunov, A.Ya.~Silenko, O.V.~Teryaev, Yu.N.~Uzikov, A.B.~Borisov,
+E.F.~Dlin\\[3pt]
+\textbf{MIPT:} Yu.N.~Filatov, A.N.~Zelenski, S.V.~Vinogradov, S.N.~Zhabin, I.S.~Yudin,
+A.A.~Chernikova, E.D.~Tsyplakov, I.V.~Lilienberg, A.I.~Chernyshov\\[3pt]
+\textbf{INR RAS:} A.E.~Aksentiev, A.S.~Belov, Yu.V.~Senichev, S.D.~Kolokolchikov,
+A.A.~Melnikov, P.~Palamarchuka\\[3pt]
+\textbf{ITP:} N.N.~Nikolaev\\[3pt]
+\textbf{STL Zaryad:} A.M.~Kondratenko, M.A.~Kondratenko\\[3pt]
+\textbf{INP BSU:} V.G.~Baryshevsky, S.V.~Anischenko, A.A.~Gurinovich\\[3pt]
+\textbf{BINP SB RAS:} D.K.~Toporkov
+}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                %
+%    BEGINNING OF TEXT                           %
+%                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\maketitle
+ 
+ \newpage
+
+\tableofcontents
+
+ \newpage
+
+\input{chapters/01-introduction}
+\input{chapters/02-nuclotron}
+\input{chapters/03-nica-bypass}
+\input{chapters/04-jinr-ring}
+\input{chapters/05-systematics}
+\input{chapters/06-axion}
+\input{chapters/07-conclusion}
+
+\bibliographystyle{unsrt}
+\bibliography{bib/references}
+
+\end{document}
