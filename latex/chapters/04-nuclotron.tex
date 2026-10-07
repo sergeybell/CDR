@@ -1,0 +1,409 @@
+\section{Modernized Nuclotron}
+\label{sec:nuclotron}
+
+\subsection{Present Nuclotron lattice}
+
+Figure~\ref{fig:nica_complex} shows the NICA accelerator complex, which
+comprises the Booster, the Nuclotron and the Collider. The Booster and the
+Nuclotron serve as the injector of heavy ions, polarized protons and
+deuterons into the collider. The Nuclotron lattice was originally designed to
+be as close to circular as possible and has eight superperiods.
+Figure~\ref{fig:nuclotron_twiss} shows the Twiss functions of one superperiod,
+which consists of a bending arc of three FODO cells, each with four bending
+magnets with a maximum field of \SI{1.8}{T}, and a straight section of one FODO
+cell. The Nuclotron circumference is \SI{251}{m}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{nica_complex}
+  \caption{NICA accelerator complex.}
+  \label{fig:nica_complex}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{nuclotron_twiss}
+  \caption{Twiss functions of one Nuclotron superperiod.}
+  \label{fig:nuclotron_twiss}
+\end{figure}
+
+The main drawback of the Nuclotron, both as a collider injector and as a
+stand-alone ring, is the limited length of the drift spaces in which the
+equipment for these two functions must be installed. All modernization options below
+are assessed with respect to this limitation.
+
+\subsection{Modernization options}
+
+Two modernization options of the Nuclotron have been studied.
+
+The first option, Nuclotron~2.1, is a lattice that preserves all properties of
+the existing accelerator and allows deuteron EDM experiments with electric
+deflectors or Wien filters installed in the ring. Either device keeps the spin
+of the polarized beam along its direction of motion around the ring. Within the
+eight-superperiod lattice, $N_{super} = 8$, this requires implementing the
+frozen (or quasi-frozen) spin concept by lengthening the straight sections
+between the arcs, ensuring zero dispersion in the straight sections, and, if
+possible, keeping the ring circumference so that the equipment fits into the
+existing tunnel. An axion search could also be included in this framework,
+although the treatment of the systematic errors of such an experiment is not
+yet fully understood. In the Nuclotron~2.1 option, all key collider
+parameters, such as the transition energy and the electron cooler parameters,
+remain unchanged. This creates a serious problem at the interface between the
+collider and the Nuclotron: crossing the transition energy with a cooled beam
+leads to irreversible beam degradation and a lower final luminosity.
+
+The Nuclotron~2.2 option introduces modifications that ensure compatibility
+with the collider. The injection energy of polarized protons into the collider
+remains at 2--\SI{3}{GeV}. To eliminate the effect of transition crossing after
+electron cooling, the transition energy of the collider is to be raised above
+its maximum operating energy. In addition, a lower maximum energy of heavy ions
+and polarized particles in Nuclotron~2.2 is considered. This frees space in the
+ring for Wien filters and extends the capabilities of the Nuclotron for EDM and
+axion experiments. A lower Nuclotron energy does not degrade the complex as a
+whole, since the collider can take over some functions of the Nuclotron and
+provide proton and heavy-ion beams over the entire Nuclotron energy range.
+
+\subsection{Nuclotron 2.1: quasi-frozen spin for deuterons}
+
+Adapting the Nuclotron lattice to the measurement of the deuteron EDM involves
+three problems: lengthening the straight sections, suppressing the dispersion
+in the straight sections, and keeping the spin direction along the momentum
+around the ring.
+
+The first problem is solved by raising the maximum field of the bending
+magnets to \SI{1.8}{T} and by merging the two adjacent magnets between the
+quadrupoles into one magnet. At the same time, the dispersion is suppressed by
+choosing the horizontal phase advance in the arcs. One superperiod of the
+modernized Nuclotron~2.1 is shown in Fig.~\ref{fig:nuclotron21}. The main
+parameters of Nuclotron~2.1 are: circumference \SI{251}{m}; betatron tunes
+$Q_x = 9.78548$, $Q_y = 10.6839$; momentum compaction factor 0.0134394; slip
+factor $-0.0222388$; natural chromaticity $-16.0394$ (horizontal) and
+$-17.8984$ (vertical). In the figure, D denotes a defocusing quadrupole, F a
+focusing quadrupole, B a dipole magnet and ED an electrostatic deflector. The
+parameters of all options are summarized in Table~\ref{tab:nuclotron}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{nuclotron21_twiss}
+  \caption{Twiss functions of one superperiod of the modernized Nuclotron~2.1
+    with two electrostatic deflectors.}
+  \label{fig:nuclotron21}
+\end{figure}
+
+With the bending field raised to \SI{1.8}{T}, the length of the straight
+section in each superperiod increases from 7.3 to \SI{10.5}{m}. The third
+problem, keeping the spin direction relative to the momentum as required for
+the detection of the deuteron EDM signal, is solved with negative-curvature
+electrostatic deflectors in each superperiod (Fig.~\ref{fig:nuclotron_ed}).
+
+In the quasi-frozen spin concept, the magnetic and electric fields act in
+different elements. The spin direction therefore oscillates relative to the
+direction of motion, since the spin rotates in opposite directions in the
+magnetic and electrostatic bending elements. The deuteron magnetic anomaly is
+small, $G = -0.143$. The spin oscillates around the momentum in each magnetic
+arc within half of the spin phase advance,
+$\Phi_s = \frac{1}{2N}\,2\pi\gamma G$, and each time it is turned back by
+$-\Phi_s$ in the electrostatic deflector; here $N$ is the arc superperiodicity.
+This keeps the average spin direction along the momentum around the whole ring,
+in accordance with the quasi-frozen spin concept~\cite{Senichev:2020qfs}.
+
+For the Nuclotron, $N = 8$. Owing to the small value of $\Phi_s$, the effective
+EDM signal is reduced only by the factor
+\begin{equation}
+  J_0(\Phi_s) \approx 1 - \frac{\Phi_s^2}{4},
+\end{equation}
+i.e., by a few percent at most.
+
+To determine the parameters of the electrostatic deflectors in the
+quasi-frozen spin mode for deuterons, consider the lattice as consisting of
+two different parts (Fig.~\ref{fig:nuclotron_ed}). The magnetic arcs bend the
+beam by $\Phi^B = 2\pi/N + 2\alpha$ each and rotate the spin in the horizontal
+plane relative to the momentum by $\Phi^B_s = \nu^B_s\Phi^B$. The electrostatic
+arcs with negative-curvature deflectors bend the beam by $\Phi^E = -2\alpha$
+each and rotate the spin relative to the momentum in the opposite direction by
+$\Phi^E_s = \nu^E_s\Phi^E$. The quasi-frozen spin condition requires
+$\Phi^E_s = -\Phi^B_s$. Since in an electrostatic deflector the spin rotates
+relative to the momentum many times faster than in a magnetic field, the two
+types of arcs are related by
+\begin{equation}
+  \nu_s^B\left(\frac{2\pi}{N}+2\alpha\right) = \nu_s^E\, 2\alpha,
+  \qquad
+  \alpha = \frac{1}{\nu_s^E/\nu_s^B-1}\,\frac{\pi}{N} = -\gamma^2\frac{G}{G+1}\,\frac{\pi}{N},
+  \label{eq:nuclotron_alpha}
+\end{equation}
+where $\nu_s^E$ and $\nu_s^B$ are given by Eqs.~\eqref{eq:nu_e}
+and~\eqref{eq:nu_b}. For given bending magnets and a deflector field
+$E_{ED} = \SI{130}{kV/cm}$, one obtains $\nu_s^E/\nu_s^B$, the parameter
+$\alpha$ and the radius of curvature of the deflector $R_{ED} = \kappa/E_{ED}$,
+where $\kappa = p_0\beta c/e$ is the electric rigidity and
+$p_0 = \gamma m\beta c$, so that
+$R_{ED} = \frac{mc^2}{e}\frac{\gamma\beta^2}{E_{ED}}$. The deflector length is
+then
+$L_{ED} = 2\alpha R_{ED} = -2\frac{\gamma^2 G}{G+1}\frac{\pi}{N}R_{ED}$.
+Figure~\ref{fig:nuclotron_ed} shows how the electrostatic deflectors are
+inserted to realize the quasi-frozen spin lattice of the Nuclotron. At the
+optimal polarimeter energy $W = \SI{270}{MeV}$~\cite{Kurilkin:2010ym},
+$\alpha = 0.026\pi$ and the required length of the electrostatic channel is
+\SI{7.3}{m}. The EDM signal relative to the frozen spin case,
+$S^{QFS}_{EDM}/S^{FS}_{EDM} = 1-\alpha^2/4 \approx 0.998$, is reduced by only
+0.2\%.
+
+The electrostatic arc with negative curvature leaves room for the necessary
+equipment in the straight section between two magnetic arcs; when the
+electrostatic deflectors are switched off, the beam passes straight through
+this section.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{nuclotron_ed_insert}
+  \caption{Electrostatic insertion compensating the spin rotation in the
+    magnetic arc.}
+  \label{fig:nuclotron_ed}
+\end{figure}
+
+A lattice with twice the number of superperiods, 16, was also considered.
+By splitting the double bending magnets into individual magnets, the number of
+FODO cells per superperiod is doubled, and with a \ang{60} phase advance per
+FODO cell the dispersion is suppressed in every second straight section. In
+this version $\alpha = 0.013\pi$, and the EDM signal relative to the frozen spin
+case is $1-\alpha^2/4 \approx 0.9996$, i.e., reduced by only 0.04\%, which makes
+this lattice practically equivalent to the frozen spin one. This lattice can
+also be used for the proton EDM, since the spin rotation angle of protons in
+the magnetic arcs is only about \ang{30}.
+
+\subsection{Nuclotron 2.2: quasi-frozen spin with Wien filters for deuterons}
+
+In the Nuclotron~2.2 lattice, a small vertical magnetic field of about
+\SI{100}{mT} is added to compensate the Lorentz force of the electric field,
+so that the electrostatic deflectors become straight. With the magnetic field
+added, the E+B element is a Wien filter. The ring then consists of arcs
+connected by straight sections with Wien filters, in which crossed electric
+and magnetic fields keep the particles on a straight path (zero Lorentz force)
+and compensate the spin rotation accumulated in the magnetic arcs. The total
+length of the Wien filters is determined by the beam parameters and by the
+required compensation of the spin rotation in the arcs, whereas their number
+is chosen for convenient placement around the ring.
+
+With $N$ magnetic arcs in total, each arc bends the particles by
+$\Phi^B_{arc} = 2\pi/N$ and rotates the spin in the horizontal plane relative
+to the momentum by $\Phi^{arc}_s = \gamma G\,\Phi^B_{arc}$. The Wien filters
+rotate the spin relative to the momentum in the opposite direction. In the
+electric field $E_{wf}$ the spin rotation angle is
+\begin{equation}
+  \Phi^E_{swf} = -\left(\gamma G+\frac{\gamma}{\gamma+1}\right)\beta^2\,\Phi^E_{wf},
+\end{equation}
+where $\Phi^E_{wf} = \frac{eE_{wf}}{m_0c^2\gamma\beta^2}L_{wf}$ is the momentum
+rotation angle in the electric field of the Wien filter, and in the magnetic
+field $B_{wf}$ it is
+\begin{equation}
+  \Phi^B_{swf} = (\gamma G+1)\,\Phi^B_{wf},
+\end{equation}
+where $\Phi^B_{wf} = \frac{eB_{wf}}{m_0c\gamma\beta}L_{wf}$ is the momentum
+rotation angle in the magnetic field of a Wien filter of length $L_{wf}$.
+
+Since the Lorentz force in the Wien filter vanishes, the angles must be equal,
+$\Phi^E_{wf} = \Phi^B_{wf}$, and they can be expressed through the electric
+field $E_{wf}$ and the length $L_{wf}$ of the filters installed in all $N$
+straight sections. In the frozen spin option, the total spin precession
+frequency relative to the momentum in the combined E+B bending element is
+zero. The quasi-frozen spin option instead requires the total spin rotation
+angle per turn in the E and B fields to vanish. The QFS condition therefore
+reads
+\begin{equation}
+  (\gamma G+1)\,\Phi^B_{wf} - \left(\gamma G+\frac{\gamma}{\gamma+1}\right)\beta^2\,\Phi^E_{wf} = \gamma G\,\frac{2\pi}{N},
+\end{equation}
+which gives the parameters of one Wien filter:
+\begin{equation}
+  L_{wf}E_{wf} = \frac{2\pi}{N}\,\frac{G}{G+1}\,\frac{m_0c^2}{e}\,\beta^2\gamma^3,
+  \qquad
+  B_{wf} = -\frac{E_{wf}}{c\beta},
+  \label{eq:nuclotron_wf}
+\end{equation}
+where $L_{wf}$ is the length of one Wien filter. The total length of all Wien
+filters,
+$L^\Sigma_{wf}E_{wf} = 2\pi\frac{G}{G+1}\frac{m_0c^2}{e}\beta^2\gamma^3$,
+depends only on the particle species and energy.
+
+Equations~\eqref{eq:nuclotron_alpha} and~\eqref{eq:nuclotron_wf}, derived for
+electrostatic deflectors and for Wien filters, show that the type of the
+compensating element does not matter. With the magnetic arc unchanged, the
+Wien filters are shorter by the total length of the kickers, since a Wien filter
+combines the functions of an electrostatic deflector and a kicker in one
+element.
+
+Figure~\ref{fig:nuclotron221} shows the Twiss functions of one superperiod of
+the first version of the modernized lattice, Nuclotron~2.2.1. Two Wien filters
+installed in the central straight sections of the superperiod restore the spin
+direction after each magnetic half-arc. The spin deviation angle from the
+momentum, $\alpha = \gamma G\,2\pi/N$, characterizes how much the quasi-frozen
+spin lattice differs from the frozen spin one. In this lattice, the number of
+arcs that determine the spin deviation equals the number of superperiods,
+$N = 8$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{nuclotron221_twiss}
+  \caption{Twiss functions of one superperiod of the modernized
+    Nuclotron~2.2.1 with two Wien filters.}
+  \label{fig:nuclotron221}
+\end{figure}
+
+For a maximum electric field of \SI{130}{kV/cm}, the magnetic field is below
+\SI{80}{mT}. Such a low magnetic field simplifies the Wien filter design: a
+permanent magnet or an air-core coil can be used. For these fields and a
+deuteron energy of \SI{270}{MeV}, the total length of the Wien filters in all
+straight sections is about \SI{52}{m}, and the length of one Wien filter is
+\SI{3.25}{m}. At \SI{270}{MeV} (\SI{135}{MeV} per nucleon), the maximum spin
+deviation is $\alpha\sim\pm\ang{3}$ over one arc, which is a good
+approximation to a regular frozen spin lattice.
+
+In the next version, Nuclotron~2.2.2, the Wien filters are distributed over
+four straight sections of the superperiod (Fig.~\ref{fig:nuclotron222}). Each
+arc of the superperiod is thus split into two arcs, and with respect to the
+bending magnets the lattice has the superperiodicity $N = 16$, while the overall
+superperiodicity of the lattice with all elements remains 8. This solves two
+problems. First, the ring becomes a 16-sided polygon, i.e., closer to a circle,
+and fits the existing tunnel better. Second, with a bending magnet length of
+\SI{1.77}{m} and a Wien filter length of \SI{1.65}{m}, the spin deviation is
+$\alpha\sim\pm\ang{1.5}$, half that of version~2.2.1. This brings the
+properties of the quasi-frozen spin lattice much closer to those of the frozen
+spin lattice.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{nuclotron222_twiss}
+  \caption{Twiss functions of one superperiod of the modernized
+    Nuclotron~2.2.2 with four Wien filters.}
+  \label{fig:nuclotron222}
+\end{figure}
+
+To increase the energy, the modification Nuclotron~2.2.3 with fewer empty
+drift spaces and longer magnets was considered (Fig.~\ref{fig:nuclotron223}).
+In this lattice, the maximum energy is \SI{3.5}{GeV} per nucleon for deuterons
+and \SI{7.8}{GeV} for protons, which is much closer to the present Nuclotron.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{nuclotron223_twiss}
+  \caption{Twiss functions of one superperiod of the modernized
+    Nuclotron~2.2.3 with four Wien filters.}
+  \label{fig:nuclotron223}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Main parameters of the Nuclotron modifications.}
+  \label{tab:nuclotron}
+  \footnotesize
+  \setlength{\tabcolsep}{2.5pt}
+  \begin{tabular}{lcccccccc}
+    \toprule
+    \makecell[l]{Nuclotron\\lattice} & \makecell{Magnet\\length, m} & \makecell{Number of\\magnets}
+      & \makecell{Total magnet\\length, m} & \makecell{$B_{max}$,\\T}
+      & \makecell{$B_{max}R$,\\T$\cdot$m} & \makecell{$W_d^{max}$,\\GeV}
+      & \makecell{$W_d^{max}$,\\GeV/u} & \makecell{$W_p^{max}$,\\GeV} \\
+    \midrule
+    Present & 1.44 & 96 & 138.24 & 1.8 & 39.6  & 10.14 & 5.07 & 10.97 \\
+    2.1     & 2.35 & 48 & 112.77 & 1.8 & 32.2  & 8     & 4    & 8.79 \\
+    2.2.1   & 1.78 & 48 & 85.3   & 1.8 & 24.4  & 5.7   & 2.85 & 6.47 \\
+    2.2.2   & 1.78 & 48 & 85.44  & 1.8 & 24.5  & 5.7   & 2.85 & 6.47 \\
+    2.2.3   & 2.10 & 48 & 101    & 1.8 & 28.93 & 7.0   & 3.5  & 7.8 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Nuclotron 2.2.2: quasi-frozen spin with Wien filters for protons}
+
+With a magnetic superperiodicity of 16, the lattice can also be used for
+protons at a reduced energy. The energy is then limited mainly by the free
+space for the Wien filters, which is \SI{52}{m} in this lattice. The maximum
+proton energy follows from Eq.~\eqref{eq:nuclotron_wf}:
+\begin{equation}
+  \gamma(\gamma^2-1) = L_{wf}\,\frac{eE_{wf}}{mc^2}\,\frac{N}{2\pi}\,\frac{G_p+1}{G_p},
+\end{equation}
+where $L_{wf}N = \SI{52}{m}$ and $G_p = 1.793$ is the proton magnetic anomaly.
+Solving for $\gamma$ gives $\gamma = 1.08047$, i.e., $W_p\approx\SI{80}{MeV}$.
+At this energy, the spin deviation in a magnetic arc is determined by
+$\gamma G_p = 1.93711$, and the spin deviation angle is
+$\alpha = \pm\frac{1}{2}\frac{\gamma G_p}{16}$, which amounts to
+$\alpha = \ang{3.5}$.\todo[inline]{Check: with the factor $2\pi$ of
+Eq.~\eqref{eq:nuclotron_wf}, $\alpha=\pm\frac12\gamma G_p\frac{2\pi}{16}\approx\ang{22}$.}
+The same lattice as for deuterons can be used for protons, but at a lower
+energy and with the Wien filters rotated by \ang{180}, since the magnetic
+anomalies of the two particles have opposite signs. At a proton energy of
+\SI{80}{MeV} the lattice thus behaves practically as a frozen spin lattice.
+Figure~\ref{fig:pc_ay} shows the p--C analyzing power in terms of the
+``average analyzing power'' taken from Ref.~\cite{Mcnaughton:1985wyt}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{pc_analyzing_power}
+  \caption{Average p--C analyzing power $\overline{A_c}$ for
+    $\theta_{lab} = \ang{5}$--\ang{20} at discrete energies (points) and its
+    continuous energy dependence (solid line). The data are from SIN
+    ($\triangle$), TRIUMF ($\times$) and LAMPF ($\bullet$)~\cite{Mcnaughton:1985wyt}.}
+  \label{fig:pc_ay}
+\end{figure}
+
+Figure~\ref{fig:pc_ay} shows that the analyzing power near \SI{100}{MeV} is
+about 0.2, i.e., 0.35 of its maximum value $A_c = 0.53$ at \SI{230}{MeV}. This
+makes proton EDM studies at this energy in the Nuclotron~2.2.2 lattice
+feasible in parallel with full-scale deuteron measurements.
+
+Galactic axions can be searched for with the same equipment as the EDM.
+Varying the spin precession frequency at a fixed beam energy turns the booster
+with Wien filters into a broadband antenna that searches for axions through a
+resonant full or partial spin flip in the oscillating pseudomagnetic field of
+the axion halo of our Galaxy~\cite{Nikolaev:2022wyi}. The growth of the
+horizontal polarization induced by axions is extracted by a Fourier analysis of
+the oscillating vertical asymmetry in the internal
+polarimeter~\cite{JEDI:2015vwa}.
+
+\subsection{Maximum energy of heavy ions and protons in Nuclotron 2.2.2}
+
+The calculations show that deuteron and proton EDM experiments in the
+Nuclotron~2.2.2 lattice require free space for Wien filters with a total length
+of \SI{52}{m}. With the tunnel circumference fixed at \SI{251}{m}, this is
+possible either by raising the field of the bending magnets, which is already
+set to \SI{1.8}{T}, or by reducing their total length. Assuming that the
+bending field does not exceed \SI{1.8}{T}, the second option was chosen, which
+inevitably lowers the maximum particle energy in the Nuclotron.
+
+\subsection{Features of the modernized Nuclotron lattice}
+
+The lattice of the modernized Nuclotron was designed with several goals.
+First, the superperiod has a drift without bending magnets in its central
+cell, where the dispersion function reaches its maximum and the orbit
+curvature is zero ($\rho\to\infty$). This makes it possible to raise the
+transition energy, since the momentum compaction factor is
+\begin{equation}
+  \alpha = \frac{1}{C}\oint\frac{D(s)}{\rho(s)}\,ds .
+\end{equation}
+Second, the number of superperiods $s = 8$ is only slightly larger than the
+horizontal betatron tune $\nu_x$, which makes the momentum compaction factor
+easy to adjust, as in the resonant lattices with a low or negative momentum
+compaction factor~\cite{Senichev:1997kn,Ishi:1998tj,Papaphilippou:2010zz,Senichev:2008zza,Toelle:2007zz}:
+\begin{equation}
+  \alpha = \frac{\nu_x^3}{R}\sum_{k=0}^{\infty}\frac{a_k^2}{\nu_x^2-(ks)^2},
+\end{equation}
+where $a_k$ are the harmonics of the dispersion-generating perturbation.
+Third, the central drift simplifies the placement of the three sextupole
+families needed to control the betatron and spin chromaticities, whereas the
+side drifts are convenient for the Wien filters. Finally, the maximum of the
+dispersion at the center of the superperiod coincides with the minimum of the
+horizontal beta function $\beta_x$.
+
+\subsection{Summary}
+
+If the Nuclotron is used as the booster of the collider, its final energy can
+be lowered to 2--\SI{3}{GeV} without a significant degradation of the NICA
+complex, because all physics experiments with polarized beams are transferred
+to the collider. This choice has a further advantage: it shortens the total
+length of the bending magnets, e.g., by reducing each double bending magnet of
+the Nuclotron to one section, and frees about \SI{70}{m} of the orbit for
+additional equipment, in particular for polarization-preserving solenoids. It
+also provides room for EDM and axion search equipment directly in the
+Nuclotron.
+
+The material of this section has been reported
+in~\cite{Senichev:2023vtx,Senichev:2024fey,Senichev:2025ude,Senichev:2026xca,Kolokolchikov:2025sew,Senichev:2025jqf}.

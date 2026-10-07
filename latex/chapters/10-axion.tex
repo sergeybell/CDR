@@ -1,0 +1,73 @@
+\section{Spin precession in the axion search mode}
+\label{sec:axion}
+
+Peccei--Quinn axions, proposed as a solution of the strong CP problem, are
+among the most likely dark matter candidates. A storage ring can be used as an
+antenna for the search for the galactic axion~\cite{Nikolaev:2022wyi}.
+
+Current searches for resonant spin rotation in storage rings use the method
+developed by the JEDI collaboration, in which the growth of the vertical
+polarization out of the horizontal plane indicates the presence of the axion
+field~\cite{Nikolaev:2022wyi}. Based on an analytical treatment of the effect of the spin coherence
+time on the frequency scan for the axion signal, an alternative scheme has been
+proposed in which an initially vertical spin is rotated into the horizontal
+plane~\cite{Nikolaev:2022wyi}. This scheme is free from the ambiguity of the
+axion field phase, requires no RF spin flippers, and can be readily
+implemented with both deuterons and protons stored in the Nuclotron and NICA
+rings.
+
+Consider the proposed experiment on the example of the deuteron EDM search
+with polarized beams. It is based on bypasses with Wien filters installed on
+them (Section~\ref{sec:nica-bypass}); the QFS lattice of NICA with bypasses is
+therefore of particular interest. The EDM and axion experiments differ in that
+the axion search does not require the frozen spin condition.
+
+The method relies on the interaction of the axion with the EDM of the particles
+in the bunch. This interaction modifies the spin precession described by the
+T-BMT equation~\eqref{eq:tbmt} and increases the vertical spin component. Since
+the axion mass is unknown, it has to be found by scanning the spin precession
+frequency, which is done by varying the fields of the Wien filters.
+
+In the bending arcs of the NICA collider, the particle momentum rotates by
+$\Phi^B_{arc} = \pi$, while the deuteron spin ($\gamma G<0$) rotates in the
+opposite direction in the horizontal plane relative to the momentum by the
+angle $\Phi_s^{arc}$ of Eq.~\eqref{eq:phi_arc} (Fig.~\ref{fig:axion_diagram}).
+In each of the two straight sections, the Wien filters rotate the spin back as
+described by Eqs.~\eqref{eq:phi_e}--\eqref{eq:wien}. For a maximum electric
+field of \SI{120}{kV/cm}, the required magnetic field is below \SI{80}{mT}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{axion_spin_diagram}
+  \caption{Vector diagram of the spin transformation for the deuteron.}
+  \label{fig:axion_diagram}
+\end{figure}
+
+In the axion search mode, the QFS condition~\eqref{eq:qfs} is modified to
+\begin{equation}
+  (\gamma G+1)\,\Phi^B_{ss} - \left(\gamma G+\frac{\gamma}{\gamma+1}\right)\beta^2\,\Phi^E_{ss} = \Delta\Phi + \pi\gamma G ,
+  \label{eq:axion_qfs}
+\end{equation}
+where $\Delta\Phi$ is the detuning phase with respect to the QFS case
+$\Delta\Phi = 0$. By changing the energy and the Wien filter fields $B_{ss}$
+and $E_{ss}$, one changes the frequency of the spin precession around the
+vertical axis,
+\begin{equation}
+  f_{spin} = \frac{\Delta\Phi\,c\beta}{C_{ring}},
+  \label{eq:axion_fspin}
+\end{equation}
+where $C_{ring}$ is the ring circumference, $c\beta$ is the beam velocity and
+$\Delta\Phi$ is the detuning phase defined by Eq.~\eqref{eq:axion_qfs}. For
+example, at $\Delta\Phi = \SI{1}{rad}$ the spin precession frequency around the
+vertical axis is \SI{270}{kHz}, i.e., the axion search range is
+$f_{spin} = 0$--\SI{270}{kHz}.\todo[inline]{Eq.~\eqref{eq:axion_fspin} gives an
+angular frequency (rad/s); the frequency in Hz is $f_{spin}/2\pi$.}
+
+For a proton beam, the QFS option cannot be realized in NICA: the proton
+magnetic anomaly $G_p = 1.793$ is an order of magnitude larger, and the spin
+rotates by more than \ang{360} in each arc, so that the accumulated EDM signal
+practically vanishes. For the axion search, however, the idea remains valid,
+in a different range of $f_{spin}$.
+
+The material of this section has been reported
+in~\cite{Nikolaev:2022wyi,Senichev:2022ide,Aksentev:2026mjw}.

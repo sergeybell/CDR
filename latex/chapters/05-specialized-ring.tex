@@ -1,0 +1,319 @@
+\section{Specialized frozen spin rings at JINR}
+\label{sec:specialized-ring}
+
+This section presents two specialized frozen spin lattices designed
+exclusively for the search for the electric dipole moments of the proton and
+the deuteron: an all-electrostatic ring for protons and a ring with combined
+E+B deflectors for deuterons.
+
+\subsection{Frozen spin option for the proton beam}
+
+The frozen spin lattice for a proton beam is the simplest one in terms of
+parameter choice and is uniquely defined. It consists of electrostatic
+deflectors whose total length $L_{total}$ is determined by the beam energy and
+the maximum permissible electrostatic field strength:
+\begin{equation}
+  L_{total} = 2\pi\,\frac{mc^2}{eE}\,\gamma\beta^2 .
+  \label{eq:pring_length}
+\end{equation}
+For an energy of \SI{233}{MeV} and a maximum field of $E = \SI{120}{kV/cm}$,
+the total length of all electrostatic deflectors is $L_{total} = \SI{219.55}{m}$.
+
+With 50 deflectors placed around the ring, the length of a single deflector is
+$L_{def} = \SI{4.39}{m}$. The 50 deflectors are divided into five groups, each
+consisting of five FODO cells and containing ten deflectors
+(Fig.~\ref{fig:pring_superperiod}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{pring_superperiod}
+  \caption{Twiss functions of one superperiod of the electrostatic proton
+    ring.}
+  \label{fig:pring_superperiod}
+\end{figure}
+
+Figure~\ref{fig:pring_twiss} shows the whole ring, which consists of five
+superperiods. Each superperiod comprises an achromat with drift spaces at both
+ends, so that the phase advance per superperiod is not an integer multiple of
+$2\pi$. The ring circumference is \SI{419.1}{m}. The layout of the
+electrostatic ring is shown in Fig.~\ref{fig:pring_layout}; it closely
+resembles a circle.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{pring_twiss}
+  \caption{Twiss functions along the whole electrostatic proton ring.}
+  \label{fig:pring_twiss}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{pring_layout}
+  \caption{Layout of the electrostatic proton ring.}
+  \label{fig:pring_layout}
+\end{figure}
+
+Table~\ref{tab:pring} summarizes the ring parameters required to estimate its
+dimensions and cost.
+
+{\small
+  \begin{longtable}{p{0.55\textwidth}p{0.38\textwidth}}
+    \caption{Parameters of the frozen spin electrostatic ring for the proton
+      EDM search.}
+    \label{tab:pring} \\
+    \toprule
+    Parameter & Value \\
+    \midrule
+    \endfirsthead
+    \toprule
+    Parameter & Value \\
+    \midrule
+    \endhead
+    Circumference, m & 419.1 \\
+    Symmetry order (number of arcs and straight sections) & 5 \\
+    Injection energy, MeV & 20 \\
+    Proton magnetic anomaly $G$ & 1.793 \\
+    Final energy, MeV & 233.8 \\
+    EDM experiment energy, MeV & 233.8 \\
+    Initial and final relative velocity and Lorentz factor
+      & $\beta=0.2$, $\gamma=1.0213$; $\beta=0.6$, $\gamma=1.248$ \\
+    Revolution frequency at the beginning and end of the cycle, MHz
+      & 0.143--0.429 \\
+    Harmonic number & 20 \\
+    RF frequency at the beginning and end of the cycle, MHz & 2.8--8.6 \\
+    \midrule
+    \multicolumn{2}{c}{\textbf{Arcs}} \\
+    \midrule
+    Arc length, m & 70.1 \\
+    Arc superperiodicity & regular lattice \\
+    Arc lattice & 5 FODO cells \\
+    Number of electrostatic deflectors per arc & 10 \\
+    Deflector length, m & 4.39 \\
+    Deflector type & cylindrical \\
+    Maximum electric field of the deflector, MV/m & 12 \\
+    Number of quadrupoles per arc & 9 + 1 (two end halves) \\
+    Quadrupole type & electrostatic \\
+    Quadrupole families & one focusing (LF), one defocusing (LD) \\
+    Maximum quadrupole gradient in the arcs, kV/cm$^2$
+      & LF $= 6.78$, LD $= -6.18$ \\
+    Quadrupole length, m & 1.0 \\
+    Number of chromatic sextupoles per arc & 10 \\
+    Sextupole type & electric or magnetic \\
+    Sextupole strengths & to be determined \\
+    Betatron tunes $\nu_x/\nu_y$ & 6.12/4.72 (preliminary) \\
+    Natural chromaticity $\xi_x/\xi_y$ & to be determined \\
+    Transition energy, GeV & 3.1 \\
+    Maximum $\beta_x/\beta_y$, m & 27.9/34.8 \\
+    Maximum horizontal dispersion, m & 10.8 \\
+    \midrule
+    \multicolumn{2}{c}{\textbf{Straight sections between arcs}} \\
+    \midrule
+    Length of straight sections, m & $5\times 13.5$ \\
+    Lattice of straight sections & DOFFOD \\
+    Quadrupole gradients, T/m & QF $= 7.93$, QD $= -7.11$ \\
+    Drift length between adjacent quadrupoles, m & 6.0 \\
+    \bottomrule
+  \end{longtable}
+}
+
+As a second option, a racetrack ring with two arcs and dispersion suppressors
+at both ends of each arc was considered (Fig.~\ref{fig:pring_suppressor}). One
+of the two options will be adopted in the course of further lattice
+development, which will take spin decoherence into
+account~\cite{Senichev:2013dra}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{pring_arc_suppressor}
+  \caption{Arc with dispersion suppressors at both ends (racetrack option of
+    the proton ring).}
+  \label{fig:pring_suppressor}
+\end{figure}
+
+\subsection{Frozen spin option for the deuteron beam}
+
+The frozen spin lattice for a deuteron beam differs from the proton one in the
+composition of the equipment and in the elements used. Here the bending
+deflector with E+B fields consists of electrostatic plates
+generating a horizontal electric field, inserted into the gap of a dipole
+magnet with a vertical magnetic field (Fig.~\ref{fig:dring_deflector}).
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.38\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dring_deflector}
+    \caption{}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.58\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dring_magnet}
+    \caption{}
+  \end{subfigure}
+  \caption{Electrostatic deflector (a) and vertical-field dipole magnet with
+    the electrostatic deflector inserted into its gap (b).}
+  \label{fig:dring_deflector}
+\end{figure}
+
+The condition of stable motion on an orbit of radius $R$ follows from the
+balance of the Lorentz and centrifugal forces:
+\begin{equation}
+  R = \frac{\gamma m_0 v^2}{e\left|\vec E + c\vec\beta\times\vec B\right|},
+  \label{eq:dring_radius}
+\end{equation}
+from which the momentum precession frequency in the combined fields is
+\begin{equation}
+  \vec\Omega_p = \frac{e\vec E}{m_0\gamma\beta c} + \frac{e\,c\vec\beta\times\vec B}{m_0\gamma\beta c}.
+\end{equation}
+Subtracting $\vec\Omega_p$ from $\vec\Omega_{mdm}$ gives the spin precession
+frequency relative to the momentum:
+\begin{equation}
+  \vec\Omega^{p}_{mdm} = \frac{e}{m_0\gamma}\left\{\gamma G\vec B
+    + \left(\frac{1}{\gamma^2-1} - G\right)\frac{\vec\beta\times\vec E}{c}\right\}.
+\end{equation}
+
+A frozen spin lattice for EDM studies has to satisfy two conditions. The first
+relates the external fields to the orbit radius, Eq.~\eqref{eq:dring_radius}
+(see also~\cite{Farley:2004hp}). The second requires the spin precession
+frequency relative to the direction of motion to vanish,
+$\vec\Omega^{p}_{mdm} = 0$, i.e.,
+$\gamma G\vec B = -\left(\frac{1}{\gamma^2-1}-G\right)\frac{\vec\beta\times\vec E}{c}$.
+This fixes the relation between the fields,
+\begin{equation}
+  \vec E = -\frac{G\vec B c\gamma^2\beta^2}{\beta\left(1-\gamma^2\beta^2 G\right)},
+\end{equation}
+and the radius of curvature of the deflector,
+\begin{equation}
+  R = \frac{\gamma m_0 v^2}{eE\left(1-\dfrac{1}{G\gamma^2}\right)}.
+\end{equation}
+For an energy of \SI{270}{MeV}, the radius of curvature of the deflector is
+$R = \SI{9.207}{m}$, and the total length of all deflectors is
+$L_\Sigma = 2\pi R = \SI{57.85}{m}$. With 32 deflectors in total, the length of
+a single deflector is $L_{def} = L_\Sigma/32 = \SI{1.808}{m}$.
+
+Figure~\ref{fig:dring_vector} shows the vector diagram that defines the
+relative directions of $\vec E$ and $\vec B$. The determining factor is the
+positive vertical direction of the magnetic field, which provides the main
+compensation of the centrifugal force. Since the deuteron magnetic anomaly is
+negative, $G = -0.143$, the axis around which $\vec S$ precesses points
+downwards. A zero precession frequency then requires the vector
+$\vec\beta\times\vec E$ to point upwards, i.e., the electric field must be
+directed as shown in Fig.~\ref{fig:dring_vector}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{dring_vector_diagram}
+  \caption{Vector diagram of the fields acting on a polarized deuteron.}
+  \label{fig:dring_vector}
+\end{figure}
+
+Based on these relations, a frozen spin ring lattice was developed.
+Figure~\ref{fig:dring_arc} shows the lattice of one arc for the deuteron beam.
+The arc consists of two successive achromats with zero dispersion at its middle
+and at its ends and comprises eight FODO cells.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{dring_arc_twiss}
+  \caption{Twiss functions along an arc of the frozen spin deuteron ring.}
+  \label{fig:dring_arc}
+\end{figure}
+
+As in the electrostatic proton ring, the dispersion modulation introduced in
+the deuteron lattice provides suitable locations for sextupoles suppressing the
+spin chromaticity. Figure~\ref{fig:dring_twiss} shows the Twiss functions of
+the whole ring with a circumference of \SI{146}{m}; its layout is shown in
+Fig.~\ref{fig:dring_layout}. The main parameters of the synchrotron for the
+deuteron EDM search at \SI{270}{MeV} per nucleon are listed in
+Table~\ref{tab:dring}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{dring_twiss}
+  \caption{Twiss functions along the frozen spin deuteron ring.}
+  \label{fig:dring_twiss}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{dring_layout}
+  \caption{Layout and dimensions of the frozen spin deuteron ring.}
+  \label{fig:dring_layout}
+\end{figure}
+
+{\small
+  \begin{longtable}{p{0.55\textwidth}p{0.38\textwidth}}
+    \caption{Parameters of the frozen spin ring with E+B
+      deflectors for the deuteron EDM search.}
+    \label{tab:dring} \\
+    \toprule
+    Parameter & Value \\
+    \midrule
+    \endfirsthead
+    \toprule
+    Parameter & Value \\
+    \midrule
+    \endhead
+    Circumference, m & 145.85 \\
+    Symmetry order (number of arcs and straight sections) & 2 \\
+    Injection energy, MeV/u & 40 \\
+    Final energy, MeV/u & 270.0 \\
+    EDM experiment energy, MeV/u & 270.0 \\
+    Deuteron magnetic anomaly $G$ & $-0.143$ \\
+    Initial and final relative velocity and Lorentz factor
+      & $\beta=0.2$, $\gamma=1.0213$; $\beta=0.485$, $\gamma=1.143$ \\
+    Revolution frequency at the beginning and end of the cycle, MHz
+      & 0.143--0.99 \\
+    Harmonic number $h$ & 50 \\
+    RF frequency at the beginning and end of the cycle, MHz & 7.15--49.9 \\
+    Length of the quarter-wave RF cavity, m & 1.502 \\
+    Momentum acceptance of the separatrix at maximum energy & $1.31\times10^{-3}$ \\
+    Relative momentum spread in the bunch & $5\times10^{-4}$ \\
+    \midrule
+    \multicolumn{2}{c}{\textbf{Arcs}} \\
+    \midrule
+    Arc length, m & 51.27 \\
+    Arc superperiodicity & 2 \\
+    Arc lattice & 4 + 4 FODO cells \\
+    Number of E+B deflectors per arc & 16 \\
+    Deflector length, m & 1.80 \\
+    Deflector type & combined magnetic and electric \\
+    Maximum electric field of the deflector, MV/m & 12 \\
+    Number of quadrupoles per arc & 15 + 1 (two end halves) \\
+    Quadrupole type & magnetic multipole \\
+    Quadrupole families & one focusing (QF), one defocusing (QD) \\
+    Maximum quadrupole gradient in the arcs, kG/cm
+      & QF $= 1.359$, QD $= -1.00$ \\
+    Quadrupole length, m & 0.1 \\
+    Number of chromatic sextupoles per arc & 16 \\
+    Sextupole type & magnetic \\
+    Sextupole strengths, kG/cm$^2$ & SF $= 0.12$, SD $= 0.15$ \\
+    Betatron tunes $\nu_x/\nu_y$ & 4.70418/2.6140 (preliminary) \\
+    Natural chromaticity $\xi_x/\xi_y$ & $-4.91629/{-3.99402}$ \\
+    Transition energy, GeV & 5.3 \\
+    Maximum $\beta_x/\beta_y$, m & 15.1/16.5 \\
+    Maximum horizontal dispersion, m & 2.5 \\
+    \midrule
+    \multicolumn{2}{c}{\textbf{Straight sections between arcs}} \\
+    \midrule
+    Length of straight sections, m & $2\times 23.3$ \\
+    Lattice of straight sections & $3\times$FODO \\
+    Quadrupole gradients, kG/cm & QF $= 0.734$, QD $= -0.782$ \\
+    Free drift spaces between adjacent quadrupoles, m & $12\times 3.2$ \\
+    \bottomrule
+  \end{longtable}
+}
+
+\subsection{Summary}
+
+Two specialized frozen spin lattices have been developed for the search for
+the proton and deuteron electric dipole moments. These results form the basis
+for the physical design of the experimental facilities and their cost
+estimate. In contrast to the quasi-frozen spin options of
+Sections~\ref{sec:nica-bypass} and~\ref{sec:nuclotron}, these rings are
+intended exclusively for experiments on the violation of fundamental
+symmetries.
+
+The material of this section has been reported
+in~\cite{Palamarchuka:2026pyv,Kolokolchikov:2026xbv}.

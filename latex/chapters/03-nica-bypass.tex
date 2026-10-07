@@ -1,4 +1,646 @@
-\section{NICA bypasses}
+\section{NICA collider with bypasses}
 \label{sec:nica-bypass}
 
-To be written.
+\subsection{Modified NICA lattice for the EDM search}
+
+The NICA lattice was not designed for EDM research; hence the only option is
+the quasi-frozen spin concept, which can be realized for deuterons. The
+adaptation strategy relies on two facts. First, the straight sections of the
+collider are fully occupied by the equipment of the MPD and SPD experiments.
+Second, these detectors and their interaction points are not needed for the
+EDM search. The simplest solution is therefore to introduce bypasses, as shown
+in Fig.~\ref{fig:bypass_layout}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{nica_bypass_layout}
+  \caption{Modified NICA lattice for the EDM search with bypass insertions (red).}
+  \label{fig:bypass_layout}
+\end{figure}
+
+The bypass sections avoid both detector interaction points and provide free
+space for E+B elements. Owing to the zero Lorentz force, these elements are
+transparent to the beam dynamics, while they rotate the spin opposite to its
+rotation in the arcs and thus realize the quasi-frozen spin concept. Without
+the interaction points, the two beams circulate in two uncoupled rings, which
+doubles the data-taking rate.
+Figures~\ref{fig:bypass_twiss} and~\ref{fig:bypass_da} show the Twiss functions
+and the dynamic aperture in both transverse planes.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{nica_bypass_twiss}
+  \caption{Twiss functions of NICA with bypass insertions.}
+  \label{fig:bypass_twiss}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{nica_bypass_da_x}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{nica_bypass_da_y}
+    \caption{}
+  \end{subfigure}
+  \caption{Dynamic aperture of NICA with bypass insertions in the horizontal (a)
+    and vertical (b) planes.}
+  \label{fig:bypass_da}
+\end{figure}
+
+The linear part of the dynamic aperture, about \SI{2000}{mm.mrad},
+significantly exceeds the required value in both planes. For an electric field
+limited to about \SI{100}{kV/cm}, Eq.~\eqref{eq:wien} gives a total length of the
+E+B elements of about 25--\SI{30}{m} per bypass, which is 30\% of the bypass
+length. Spin-orbit tracking shows that the spin deviates from the momentum by
+less than \ang{10}; the simulation for the three spin projections gives a
+deviation within $\pm\ang{7.5}$.\todo[inline]{The source document gives both
+values (\ang{10} and $\pm\ang{7.5}$) in two versions of this paragraph; to be
+unified.} Despite this deviation, the polarization asymmetry
+measured at the polarimeter location remains constant.
+
+\subsection{Lattice parameters}
+
+The polarimetry constraints~\cite{Kurilkin:2010ym} determine the choice of the
+particle species and the experiment energy. The lattice is designed for
+deuterons with a kinetic energy of \SI{240}{MeV}. The corresponding dipole
+field and magnetic rigidity are listed in Table~\ref{tab:bypass_param}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Main parameters of the experiment and the bypass lattice.}
+  \label{tab:bypass_param}
+  \begin{tabular}{ll}
+    \toprule
+    Particles & deuterons \\
+    Dipole magnetic field & \SI{0.132}{T} \\
+    Magnetic rigidity $B\rho$ & \SI{3.252}{T.m} \\
+    Ring circumference & \SI{503.04}{m} \\
+    Experiment energy & \SI{240}{MeV} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Bypass optics}
+
+The arc geometry of the NICA ring is kept unchanged; only the fields in the
+installed elements may be changed. NICA can therefore be used for different
+experiments without a major rebuild of the lattice.
+
+The NICA arc has a non-zero dispersion, and both the dispersion and its
+derivative vanish at the arc ends. The straight sections are dispersion-free
+along their whole length. The circumference of the original NICA ring is
+$L_{acc} = \SI{503.04}{m}$ and the length of one arc is
+$L_{arc} = \SI{142.15}{m}$, which leaves
+$(L_{acc}-2L_{arc})/2 = \SI{109.6}{m}$ for each straight section. The bypass
+channels contain an alternative straight section and sections with bending
+dipoles. The dipoles deflect the beam by $\alpha = \ang{9}$; their field is
+$B_{BP} = \SI{1}{T}$ and their length is $L^{BP}_{dip} = \SI{50}{cm}$. The
+alternative straight section is displaced by \SI{1}{m} from the original one,
+so the length of the bypass channel is
+$L_{BP} = \SI{1}{m}/\sin\alpha \approx \SI{6.4}{m}$. The general layout of
+the bypass channels is shown in Fig.~\ref{fig:bypass_layout}.
+
+The bending magnets perturb the dispersion function. At least two focusing
+quadrupoles in the bypass channel are therefore needed to suppress the
+dispersion at its exit and to keep the whole straight section
+dispersion-free. One or three defocusing quadrupoles can be used to keep the
+beta functions periodic and symmetric. Two cases with adapted straight
+sections, identical to the arcs but without dipoles, are considered first;
+this simplifies the modeling of an ideal regular lattice. Finally, a
+realistic lattice with a fully regular FODO straight section is considered.
+
+\paragraph{Bypass with three quadrupoles.}
+In this case the bypass channel contains the minimum of three quadrupoles: two
+focusing quadrupoles QBP1 and one defocusing quadrupole QBP2
+(Fig.~\ref{fig:bypass_scheme_3q}). The arc is matched to the bypass channel by
+three quadrupoles QM1, QM2 and QM3 (matching section M1), and the bypass is
+matched to the straight section by the same quadrupoles (M2). This is possible
+because of the symmetry between the arc and the straight section built into
+the original lattice. The section lengths are given in
+Fig.~\ref{fig:bypass_scheme_3q} and Table~\ref{tab:bypass_lengths}. The ring
+circumference becomes $L^{acc}_{3quad} = \SI{503.46}{m}$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{bypass_scheme_3q}
+  \caption{Layout of the bypass with three quadrupoles.}
+  \label{fig:bypass_scheme_3q}
+\end{figure}
+
+Figure~\ref{fig:bypass_twiss_3q} shows the Twiss functions; the black lines
+mark the channel boundaries. The maximum of $\beta_y$ is located at the center
+of the channel and can be large compared with $\beta_x$. For this reason, a
+bypass with five quadrupoles is also considered.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{bypass_twiss_3q}
+  \caption{Twiss functions of the bypass with three quadrupoles. The black lines
+    show the positions of the bypass bending magnets.}
+  \label{fig:bypass_twiss_3q}
+\end{figure}
+
+\paragraph{Bypass with five quadrupoles.}
+Here the bypass channel contains five quadrupoles of two families, focusing
+QBP1 and defocusing QBP2. The channel becomes longer,
+$L^{BP}_{5quad} = \SI{9.35}{m}$, and the displacement increases to
+\SI{1.46}{m} (Fig.~\ref{fig:bypass_scheme_5q}). The matching sections M1 and M2
+are still identical but consist of two quadrupoles, QM1 and QM2, which keep the
+Twiss functions regular. The circumference increases to
+$L^{acc}_{5quad} = \SI{510.02}{m}$. As Fig.~\ref{fig:bypass_twiss_5q} shows,
+the maximum of $\beta_y$ at the channel center becomes smaller, whereas the
+maximum of the dispersion grows from $D_x^{3quad}\sim\SI{0.2}{m}$ to
+$D_x^{5quad}\sim\SI{0.5}{m}$. This case therefore has to be adapted to the
+real lattice.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{bypass_scheme_5q}
+  \caption{Layout of the bypass with five quadrupoles.}
+  \label{fig:bypass_scheme_5q}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{bypass_twiss_5q}
+  \caption{Twiss functions of the bypass with five quadrupoles. The black lines
+    show the positions of the bypass bending magnets.}
+  \label{fig:bypass_twiss_5q}
+\end{figure}
+
+\paragraph{Realistic lattice.}
+Based on these two cases, a lattice as close as possible to the real machine
+has been designed. It has a fully regular straight section, which becomes
+shorter, $L^{BP}_{SS} = \SI{80.71}{m}$ (Fig.~\ref{fig:bypass_scheme_real}). The
+bypass channel contains five quadrupoles and displaces the alternative
+straight section by \SI{1.46}{m} from the original one. Different matching
+sections M1 and M2 are used to compensate the asymmetry between the arc and
+the straight section. The Twiss functions of one half of the NICA ring with
+bypasses are shown in Fig.~\ref{fig:bypass_twiss_half}; the Wien filters are
+placed at the center of the straight section. All Twiss functions were
+computed with OptiM~\cite{Lebedev:OptiM}. The lengths and tunes of all
+versions are summarized in Table~\ref{tab:bypass_lengths}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{bypass_scheme_real}
+  \caption{Layout of the bypass in the realistic lattice.}
+  \label{fig:bypass_scheme_real}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bypass_twiss_half}
+  \caption{Twiss functions of one half of the NICA ring with bypasses. The Wien
+    filters are located in the straight section.}
+  \label{fig:bypass_twiss_half}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Ring circumference, lengths of the individual sections and betatron
+    tunes $Q_x/Q_y$ of the lattice versions.}
+  \label{tab:bypass_lengths}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lccccc}
+    \toprule
+    Lattice & \makecell{Circumfe-\\rence, m} & \makecell{Straight\\section, m}
+      & \makecell{Bypass,\\m} & \makecell{Matching\\section, m} & $Q_x/Q_y$ \\
+    \midrule
+    NICA (ion mode) & 503.04 & 109.6 & -- & -- & 9.44/9.44 \\
+    3 quadrupoles & 503.46 & 83.97 & 6.41 & 3.198 & 13.8/11.8 \\
+    5 quadrupoles & 510.0 & 83.97 & 9.35 & 2.548 & 13.44/11.44 \\
+    Realistic & 503.5 & 80.70 & 9.35 & 2.548 & 12.8/11.8 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Natural chromaticity and dynamic aperture}
+
+This subsection addresses the stability of the orbital motion, namely, the
+correction of the natural chromaticity of the NICA bypass lattice. The
+chromaticity is the dependence of the betatron tune $Q$ on the momentum
+deviation $\delta$~\cite{Guiducci:1992kb}:
+\begin{equation}
+  Q' = \frac{dQ}{d\delta} .
+\end{equation}
+The natural chromaticity is produced by the quadrupoles at locations with
+non-zero beta function:
+\begin{equation}
+  \frac{\partial Q_x}{\partial\delta} = -\frac{1}{4\pi}\int_0^L \beta_x(s)\,k_x(s)\,ds,
+\end{equation}
+where $\beta_x(s)$ is the beta function at the quadrupole and $k_x(s)$ is the
+quadrupole gradient. The natural chromaticity can be corrected with
+sextupoles:
+\begin{equation}
+  \frac{\partial Q_x}{\partial\delta} = \frac{1}{4\pi}\int_0^L \beta_x(s)\,r(s)\,D(s)\,ds,
+\end{equation}
+where $D(s)$ is the dispersion function and $r(s)$ is the sextupole gradient.
+Correction is possible only if the sextupoles are placed where both the
+dispersion and the beta function are non-zero.
+
+Since the arc lattice is regular, the beta and dispersion functions are
+regular along the arc as well, except at the arc ends. There the dispersion is
+suppressed with the missing-magnet method, which breaks the regularity of the
+Twiss functions (Fig.~\ref{fig:bypass_twiss_half}). Two essentially different
+sextupole families can thus be placed in the regular part of the arc:
+(1)~at the maximum of $D$ and $\beta_x$ and the minimum of $\beta_y$, and
+(2)~at the minimum of $D$ and $\beta_x$ and the maximum of $\beta_y$.
+
+Figure~\ref{fig:bypass_tune_dp} shows the betatron tune versus the energy
+deviation for the natural chromaticity and for the chromaticity corrected with
+two sextupole families. Figure~\ref{fig:bypass_da_sext} shows the dynamic
+aperture without sextupoles and with the chromaticity corrected. The tracking
+was performed with COSY Infinity~\cite{Makino:2006sx}. The main parameters are
+listed in Table~\ref{tab:bypass_chrom}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Chromaticity of the NICA ring with bypasses.}
+  \label{tab:bypass_chrom}
+  \begin{tabular}{lc}
+    \toprule
+    Natural chromaticity $\xi_x/\xi_y$ & $-17/{-17}$ \\
+    Corrected chromaticity $\xi_x/\xi_y$ & $-7\times10^{-6}/7\times10^{-6}$ \\
+    Number of sextupole families & 2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{bypass_tune_vs_dp}
+  \caption{Betatron tune shift versus the energy deviation in the horizontal
+    (left) and vertical (right) planes. Red: natural chromaticity; blue:
+    corrected chromaticity.}
+  \label{fig:bypass_tune_dp}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{bypass_da_nat_x}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{bypass_da_nat_y}
+    \caption{}
+  \end{subfigure}\\[4pt]
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{bypass_da_corr_x}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{bypass_da_corr_y}
+    \caption{}
+  \end{subfigure}
+  \caption{Dynamic aperture of the NICA ring with bypasses: (a), (b) natural
+    chromaticity without sextupoles; (c), (d) chromaticity corrected with two
+    sextupole families. Left: horizontal plane; right: vertical plane.}
+  \label{fig:bypass_da_sext}
+\end{figure}
+
+\subsection{Spin-orbit motion with optimized Wien filters}
+
+The modification of the lattice is intended primarily for EDM research. This
+implies that the ring must operate in the quasi-frozen spin mode and that the
+spin coherence time of the beam must be long enough. The first requirement is
+met by placing Wien filters in the straight sections; the standard way to meet
+the second one is to use several sextupole families that correct the betatron
+and spin chromaticities. Both points were studied numerically with COSY
+Infinity~\cite{Makino:2006sx}.
+
+In the standard formalism, the spin transfer matrix is an SO(3) rotation
+$T(\nu, \bar{n})$ parametrized by the normalized spin precession frequency
+(spin tune) $\nu$ and the invariant spin axis $\bar{n}$. If the quasi-frozen
+spin condition holds, $T$ is the identity matrix and $\nu = 0$. In the
+proposed lattice this is achieved by tuning the electric field of the E+B
+elements, while the magnetic field is chosen so as to keep the closed orbit
+unchanged. The simulation shows that the spin tune of the reference particle
+$\nu_0$ can indeed be set to zero (Fig.~\ref{fig:bypass_spintune}). The spin
+deviates by a small angle in the arc and recovers its orientation in the Wien
+filters of the straight section (Fig.~\ref{fig:bypass_spin_components}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{bypass_spintune_ebe}
+  \caption{Spin tune $\nu_0$ of the reference particle versus the electric field
+    of the E+B elements.}
+  \label{fig:bypass_spintune}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{bypass_spin_components}
+  \caption{Spin components $S_x$, $S_y$, $S_z$ of the reference particle along
+    one half of the ring (arc and straight section).}
+  \label{fig:bypass_spin_components}
+\end{figure}
+
+The spin chromaticity is the dependence of the spin precession frequency on the
+particle orbit length. Because of it, the spins of the beam particles spread
+around the invariant spin axis $\bar{n}$. This process, called spin
+decoherence, is irrelevant for experiments with a non-zero expected
+polarization along $\bar{n}$. In EDM experiments, however, the polarization
+component orthogonal to $\bar{n}$ is of interest; its expectation value is
+zero, hence the importance of the spin coherence time (SCT).
+
+The spin chromaticity of the beam can be compensated with sextupole families
+to a level that provides a sufficiently long spin coherence time
+(Fig.~\ref{fig:bypass_spin_sext}). Classically, three sextupole families placed
+at the maxima of $\beta_x$, $\beta_y$ and $D$ should be used, but the lattice
+under study does not allow an efficient separation of all three Twiss
+functions. It was also found that the betatron and spin chromaticities cannot
+be compensated simultaneously in this combined lattice; this problem is
+discussed in the next subsection.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\linewidth]{bypass_spin_nosext}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\linewidth]{bypass_spin_sext}
+    \caption{}
+  \end{subfigure}
+  \caption{Spin components versus the number of turns for particles with
+    different initial offsets, without (a) and with (b) sextupole families.}
+  \label{fig:bypass_spin_sext}
+\end{figure}
+
+\subsection{Betatron chromaticity and spin coherence}
+
+According to the theory of Ref.~\cite{Melnikov:JETPL2023}, the main cause of
+spin decoherence is the deviation of the particle energy from the equilibrium
+value:
+\begin{equation}
+  \Delta\delta_{eq} = \frac{\gamma_s^2}{\gamma_s^2\alpha_0-1}
+  \left[\frac{\delta_m^2}{2}\left(\alpha_1+\frac{3}{2}\frac{\beta_s^2}{\gamma_s^2}
+  -\frac{\alpha_0}{\gamma_s^2}+\frac{1}{\gamma_s^4}\right)
+  + \left(\frac{\Delta L}{L}\right)_\beta\right],
+  \label{eq:delta_eq}
+\end{equation}
+\begin{equation}
+  \left(\frac{\Delta L}{L}\right)_\beta = \frac{\pi}{2L}\left[\epsilon_x\nu_x+\epsilon_y\nu_y\right].
+  \label{eq:dl_beta}
+\end{equation}
+The energy level around which the particle oscillates is called the effective
+energy. To eliminate the effect of the momentum spread on the orbit
+lengthening completely, the factor
+$\kappa = \eta_1 = \alpha_1+\frac{3}{2}\frac{\beta_s^2}{\gamma_s^2}
+-\frac{\alpha_0}{\gamma_s^2}+\frac{1}{\gamma_s^4}$
+in Eq.~\eqref{eq:delta_eq} must vanish. In addition, the orbit lengthening
+due to the betatron motion must be compensated as well. Both are achieved with
+three independent sextupole families placed at the maxima of the beta and
+dispersion functions. With sextupoles in the lattice, Eq.~\eqref{eq:dl_beta}
+takes the more general form~\cite{Melnikov:2022xao}
+\begin{equation}
+  \left(\frac{\Delta L}{L}\right)_\beta = -\frac{\pi}{L}\left[\epsilon_x\xi_x+\epsilon_y\xi_y\right].
+  \label{eq:dl_beta_sext}
+\end{equation}
+
+\paragraph{Magnetic ring.}
+To study this effect, a purely magnetic ring without electric elements is
+considered first; similar calculations were carried out for the COSY ring in
+J\"ulich~\cite{Melnikov:2022xao}. This ring is a version of NICA in which the
+arcs are unchanged and the straight sections are regular FODO cells matched to
+the arcs with two quadrupoles. The sensitivity of the lattice to the sextupole
+strengths $r_f$ and $r_d$ is considered. The sextupole layout is shown in
+Fig.~\ref{fig:arc_sext}; here the families SF1 and SF2 are identical and form
+one focusing family.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{nica_arc_sextupoles}
+  \caption{NICA collider arc with the sextupole layout.}
+  \label{fig:arc_sext}
+\end{figure}
+
+\begin{equation}
+  \left\{
+  \begin{aligned}
+    \xi_x &= -13.302 + 4522.234\, r_f + 527.934\, r_d,\\
+    \xi_y &= -13.337 - 944.735\, r_f - 2214.642\, r_d,\\
+    \alpha_1 &= 0.037 - 16.617\, r_f - 2.537\, r_d .
+  \end{aligned}
+  \right.
+  \label{eq:sext_response}
+\end{equation}
+Two sextupole families cannot optimize all three parameters of the spin-orbit
+motion. Either the pair $(\xi_x, \xi_y)$ or the pair $(\xi_y, \alpha_1)$ can be
+tuned. The second choice is probably less practical, because $\alpha_1$
+changes only weakly and the energy contribution to the spin tune spread can be
+reduced by beam cooling.
+
+In a purely magnetic lattice, the motion in the $x$--$\delta$ plane is fully
+described by the theory. In the vertical plane, spin resonances may contribute
+to the spread of the spin precession frequencies.
+
+As Figs.~\ref{fig:mag_dnu}(a)--(c) show, the optimum of the spin chromaticity
+does not coincide with that of the betatron chromaticity. Without
+optimization, $\Delta\nu_s\sim10^{-8}$ at $f_{rev}\sim\SI{1}{MHz}$ gives an SCT
+of about \SI{100}{s}, which is insufficient for the EDM experiment. The
+vertical chromaticity must therefore be optimized while the dynamic aperture is
+preserved. A change of $\kappa$ by about $\pm1$ is not decisive for the SCT.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{mag_dnu_xix}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{mag_dnu_kappa}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{mag_dnu_xiy}
+    \caption{}
+  \end{subfigure}
+  \caption{Purely magnetic ring: spin tune spread (a) versus the horizontal
+    chromaticity for particles injected with different radial offsets;
+    (b) versus $\kappa=\eta_1$ for particles with an energy offset;
+    (c) versus the vertical chromaticity for particles with a vertical
+    offset.}
+  \label{fig:mag_dnu}
+\end{figure}
+
+As noted above, spin resonances produce an additional spread of the spin
+precession frequencies $\Delta\nu_s$ in the vertical plane. At the working
+point $\gamma G = 0.16$, the nearest resonance is the intrinsic betatron
+resonance $\gamma G = 10 - Q_y = 0.2$. For a resonance strength
+$\varepsilon = 10^{-4}$ and a detuning $\delta = 0.04$, the expected spread
+due to the resonance is
+\begin{equation}
+  \Delta\nu_s = \delta - \sqrt{\delta^2+\varepsilon^2} \sim 1.2\times10^{-7}.
+\end{equation}
+This value estimates $\Delta\nu_s$ at $\xi_y = 0$ in
+Fig.~\ref{fig:mag_dnu}(c). Increasing the vertical chromaticity reduces the
+spread of the spin precession frequencies through the betatron orbit
+lengthening. A simple estimate for a particle with
+$\varepsilon_y\sim\SI{1}{mm.mrad}$ and $\xi_y = 40$ gives
+\begin{equation}
+  \Delta\nu_s = \nu_s\left(\frac{\Delta L}{L}\right)_\beta
+  = -\frac{\gamma G\pi}{L}\,\varepsilon_y\xi_y = -4\times10^{-8},
+\end{equation}
+which is what is needed to suppress the typical spin tune spread at
+$\xi_y = 0$ in Fig.~\ref{fig:mag_dnu}(c).
+
+\paragraph{Lattice with Wien filters.}
+As Figs.~\ref{fig:wf_dnu}(a)--(c) show, in a ring with electrostatic fields the
+optima of the betatron and spin chromaticities do not coincide either in the
+$x$--$\delta$ plane or in the vertical plane. As in the magnetic ring, the
+preferred option for minimizing spin decoherence is to compensate the pair
+$(\xi_x, \xi_y)$ for the beam parameters given above. The residual spread
+$\Delta\nu_s\sim10^{-9}$ in the energy plane gives an SCT of about
+\SI{1000}{s}, which is sufficient for the EDM experiment. Moreover,
+measurements of $(\xi_x, \xi_y)$ are routine in storage rings, unlike
+measurements of $\alpha_1$; with two sextupole families it is therefore
+reasonable to optimize the pair $(\xi_x, \xi_y)$.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{wf_dnu_xix}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{wf_dnu_kappa}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{wf_dnu_xiy}
+    \caption{}
+  \end{subfigure}
+  \caption{Ring with Wien filters: spin tune spread (a) versus the horizontal
+    chromaticity for particles injected with different radial offsets;
+    (b) versus $\kappa=\eta_1$ for particles with an energy offset;
+    (c) versus the vertical chromaticity for particles with a vertical
+    offset.}
+  \label{fig:wf_dnu}
+\end{figure}
+
+The mismatch between the optima of the betatron and spin chromaticities in the
+$x$--$\delta$ plane of a ring with electrostatic fields is explained by the
+particle motion in the electric field. A radial displacement of a particle in
+a deflector with a radial field changes the particle energy. This follows from
+the potential nature of the field and couples the orbital motion to the
+particle energy.
+
+\paragraph{NICA with bypasses.}
+For the modified NICA ring with bypasses and Wien filters described above, the
+betatron chromaticity and the spin coherence were optimized separately.
+
+To correct the betatron chromaticity, two sextupole families are needed, as
+shown above: one near the focusing quadrupoles and the other near the
+defocusing quadrupoles. The natural chromaticity of the NICA ring with
+bypasses is $\xi_{x,y} = -17/{-17}$. After the correction, the spin precession
+frequency can be followed in Fig.~\ref{fig:bypass_nu}: the red line shows the
+natural chromaticity and the blue dotted line shows the chromaticity corrected
+to zero. For this case, spin tracking over $3\times10^5$ turns was performed
+for particles with different initial offsets in $x$, $y$ and $\delta$ and with
+the initial spin $\vec{S}_0$ at \ang{45} in the $y$--$z$ plane
+(Fig.~\ref{fig:bypass_spin_sext}).
+
+The key quantity is the spin precession frequency, which in general depends on
+the coordinates and the energy. The dominant contribution is the quadratic
+term in the expansion of the spin precession frequency, as seen in
+Fig.~\ref{fig:bypass_nu} for both the natural and the corrected
+chromaticity.
+
+To obtain spin coherence, the quadratic terms of the expansion were
+compensated with two focusing sextupole families. These families, however,
+are linearly dependent, because they are located at positions with equal
+values of the beta and dispersion functions (Fig.~\ref{fig:arc_sext}), which
+is typical of lattices with regular arcs. COSY Infinity cannot operate near a
+zero spin precession frequency: the spin transfer matrix becomes degenerate
+near the resonance and the code fails. The lattice was therefore detuned from
+the resonance to $\nu_s\sim10^{-4}$, while the particles were still required to
+precess synchronously, i.e., coherently. In this approach the chromaticity is
+not controlled; its value is only monitored, and with the spin chromaticity
+corrected it equals $\xi_{x,y} = -13/{-18}$.
+
+Correcting only the betatron chromaticity does not give a zero spread of the
+spin precession frequency. Conversely, achieving spin coherence by suppressing
+the quadratic term of the spin precession frequency does not correct the
+chromaticity. This brings us back to Eq.~\eqref{eq:delta_eq}: to ensure a zero
+energy deviation, the chromaticities $\xi_x$, $\xi_y$ and $\eta_1$ must all be
+set to zero. This is possible with three sextupole families, but it still does
+not yield spin coherence. Moreover, the required maximum sextupole strength is
+too high to be realized (Table~\ref{tab:bypass_opt}).
+
+This effect has already been explained for the purely magnetic ring, where the
+dependence of the spin tune on the sextupole strengths is given by
+Eq.~\eqref{eq:sext_response}. In the presence of electrostatic fields, the
+chromaticities $\xi_x$, $\xi_y$ affect the spin tune more strongly than
+$\kappa$, whose contribution can be compensated by beam cooling.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{bypass_nu_x}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{bypass_nu_y}
+    \caption{}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{bypass_nu_d}
+    \caption{}
+  \end{subfigure}
+  \caption{Spin precession frequency versus the coordinates $x$ (a), $y$ (b) and
+    $\delta$ (c) for different optimization cases: NC, natural chromaticity
+    (red); BC, zero betatron chromaticity (blue dotted); SC, spin coherence
+    (green); BC$_\alpha$, zero chromaticity and $\alpha_1=0$ (violet);
+    BC$_\eta$, zero chromaticity and $\eta_1 = 0$ (light blue).}
+  \label{fig:bypass_nu}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Main parameters of the NICA ring with bypasses for different
+    optimization cases. $K_x$, $K_y$, $K_z$ are the coefficients of the
+    quadratic terms of the spin precession frequency in $x$, $y$ and $\delta$.}
+  \label{tab:bypass_opt}
+  \small
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{lcccc}
+    \toprule
+    Optimization & None & Chromaticity & \makecell{Spin\\coherence}
+      & \makecell{Chromaticity\\$+\,\eta_1$} \\
+    \midrule
+    Chromaticity $\xi_x/\xi_y$ & $-17/{-17}$ & $0/0$ & $-13/{-18}$ & $0/0$ \\
+    $\alpha_1$ & 0.2 & $-0.4$ & $-0.37\times10^{-2}$ & $-0.85$ \\
+    $K_x$ & $-0.16\times10^{-1}$ & $0.55\times10^{-1}$ & $0.27\times10^{-13}$ & $0.56\times10^{-1}$ \\
+    $K_y$ & $0.51\times10^{-2}$ & $0.76\times10^{-1}$ & $-0.12\times10^{-12}$ & $0.78\times10^{-1}$ \\
+    $K_z$ & $-0.43\times10^{-1}$ & $0.20\times10^{-1}$ & $0.13\times10^{-12}$ & $1.6\times10^{-1}$ \\
+    Sextupole families & none & 2 & 3 & 3 \\
+    \makecell[l]{Max.\ sextupole\\strength, m$^{-3}$} & -- & 2.7 & 19.4 & 104.2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Summary}
+
+For EDM experiments, NICA must operate as a storage ring. To this end, a
+modification is proposed in which bypass channels create alternative straight
+sections parallel to the original ones. These straight sections accommodate
+Wien filters that compensate the MDM spin rotation in the arcs. Since the arcs
+remain unchanged, NICA can still be used for other experiments.
+
+Two basic bypass layouts were considered, and finally the most realistic
+lattice with a fully regular straight section was obtained. The final design
+meets all lattice requirements. Spin-orbit simulations with optimized Wien
+filter fields show that the spin recovers its orientation in the straight
+section, so that the quasi-frozen spin method can be implemented at NICA with
+bypasses. The simultaneous control of the spin coherence and the betatron
+chromaticity is under study. The same lattice also makes it possible to use
+NICA as an axion antenna (Section~\ref{sec:axion}).
+
+The material of this section has been reported
+in~\cite{Senichev:2022ide,Kolokolchikov:2023zpy,Kolokolchikov:2023zhf,Kolokolchikov:LaPlas2023,Aksentev:2023xnd,Melnikov:JETPL2023,Melnikov:2024gcc,Aksentev:2024tmx,Senichev:2024qtr,Senichev:2025jqf}.

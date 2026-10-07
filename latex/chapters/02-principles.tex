@@ -1,0 +1,176 @@
+\section{Lattice design principles for a storage-ring EDM search}
+\label{sec:principles}
+
+\subsection{Spin motion in electromagnetic fields}
+
+The concept of an EDM measurement in a storage ring is based on the
+Thomas--Bargmann--Michel--Telegdi (T-BMT)
+equation~\cite{Bargmann:1959gz,Fukuyama:2013ioa}. In accordance with the
+Ehrenfest theorem, it describes the classical spin motion of a charged particle
+with a hypothetical EDM:
+\begin{equation}
+\begin{aligned}
+  \frac{d\vec{S}}{dt} &= \left(\vec{\Omega}_{mdm} + \vec{\Omega}_{edm}\right)\times\vec{S},\\
+  \vec{\Omega}_{mdm} &= -\frac{e}{m\gamma}\left\{(\gamma G+1)\vec{B}_{\perp}
+     + (1+G)\vec{B}_{\parallel}
+     - \left(\gamma G+\frac{\gamma}{\gamma+1}\right)\frac{\vec{\beta}\times\vec{E}}{c}\right\},\\
+  \vec{\Omega}_{edm} &= -\frac{e\eta}{2m}\left(\vec{\beta}\times\vec{B}+\frac{\vec{E}}{c}\right),
+  \qquad G = \frac{g-2}{2},
+\end{aligned}
+\label{eq:tbmt}
+\end{equation}
+where $\gamma$ is the Lorentz factor, $\vec{\beta}$ is the relative velocity,
+$c$ is the speed of light, $e$ and $m$ are the particle charge and mass, $G$ is
+the magnetic anomaly, $g$ is the gyromagnetic ratio, $\Omega_{mdm}$ and
+$\Omega_{edm}$ are the spin precession frequencies due to the magnetic and
+electric dipole moments, $\eta$ is a dimensionless coefficient defined by
+$d = \eta e\hbar/4mc$, and $\vec{B}=\{B_\perp, B_\parallel\}$ and
+$\vec{E}=\{E_\perp, E_\parallel\}$ are the magnetic and electric fields. Since
+no elements with a longitudinal magnetic field are used, we set
+$B_\parallel = 0$; the longitudinal electric field is neglected as well,
+$E_\parallel = 0$, because its contribution is small.
+
+The lattice must provide conditions under which the EDM signal continuously
+accumulates while the beam circulates in the ring. To this end, the spin and
+the longitudinal momentum must remain aligned, $\vec{S}\uparrow\uparrow\vec{p}$,
+with a precision that determines the attainable sensitivity of the EDM
+measurement. Depending on the precision and the method of its realization,
+this condition is referred to as the frozen spin or, more generally, the
+quasi-frozen spin condition~\cite{Senichev:2016rez}.
+
+\subsection{Frozen spin concept}
+
+The idea of searching for the proton and deuteron EDMs with polarized beams in
+a storage ring is based on the frozen spin (FS) method originally proposed at
+the Brookhaven National Laboratory~\cite{Farley:2004hp,srEDM:2008}. An FS
+lattice consists of deflectors combining electric and magnetic fields in one
+element, in which the spin of the reference particle always stays along the
+momentum.
+
+The frozen spin method relies on the fact that at a specific, so-called
+``magic'' energy the spin precesses in the external fields with the same
+frequency as the particle momentum,
+$\Omega^{p}_{E,B} = \frac{eE}{m\gamma\beta c} + \frac{eB}{m\gamma}$.
+Subtracting this frequency from $\vec{\Omega}_{mdm}$ gives the spin precession
+frequency relative to the momentum:
+\begin{equation}
+  \vec{\Omega}^{p}_{mdm} = \vec{\omega}^{p}_{E} + \vec{\omega}^{p}_{B},
+  \label{eq:omega_p}
+\end{equation}
+where
+$\vec{\omega}^{p}_{E} = \frac{e}{m}\left(G-\frac{1}{\gamma^2-1}\right)\frac{\vec{E}\times\vec{\beta}}{c}$
+and $\vec{\omega}^{p}_{B} = \frac{e}{m}G\,\vec{B}_{\perp}$ are the
+contributions of the electric and magnetic fields. In a purely electrostatic
+ring ($\vec{B}=0$) the frozen spin condition $\vec{\omega}^{p}_{E} = 0$ is
+satisfied at the magic energy
+\begin{equation}
+  G - \frac{1}{\gamma_{mag}^2-1} = 0 .
+  \label{eq:magic}
+\end{equation}
+In a ring with both magnetic and electric elements, the frozen spin condition
+$\vec{\Omega}^{p}_{mdm}=0$ is achieved by balancing the radial electric field
+$E_r$ against the vertical guiding magnetic field $B_v$~\cite{srEDM:2008}:
+\begin{equation}
+  E_r = \frac{G B_v c\beta\gamma^2}{1-G\beta^2\gamma^2} \approx G B_v c\beta\gamma^2 .
+  \label{eq:fs_hybrid}
+\end{equation}
+A hybrid ring is required for deuterons because their magnetic anomaly is
+negative, $G = -0.143$, and condition~\eqref{eq:magic} cannot be satisfied.
+
+It is convenient to introduce the spin tune, i.e., the number of spin
+precessions per revolution. In an electrostatic ring the spin tune relative
+to the momentum is $\nu_s^E = \omega^p_E/\Omega^p_E$:
+\begin{equation}
+  \nu_s^E = \left(G-\frac{1}{\gamma^2-1}\right)\gamma\beta^2 ,
+  \label{eq:nu_e}
+\end{equation}
+and in a magnetic field, $\nu_s^B = \omega^p_B/\Omega^p_B$:
+\begin{equation}
+  \nu_s^B = \gamma G .
+  \label{eq:nu_b}
+\end{equation}
+Thus, the same concept applies to protons and deuterons, but it is realized
+with different types of deflectors.
+
+\subsection{Quasi-frozen spin concept}
+
+In the NICA ring, an implementation of the FS concept would require a
+complete rebuild of the optics. Suppose instead that the spin oscillates in
+the horizontal plane around the frozen spin direction with a small amplitude,
+$\Phi_s^2 \ll 1$. This can be done with special electric-field elements in the
+straight sections, which bring the spin back along the momentum after it has
+deviated in the magnetic arc. The EDM signal growth is then reduced by the
+factor $J_0(\Phi_s)\approx 1-\Phi_s^2/4$. The deuteron magnetic anomaly
+$G=-0.143$ is small, and the spin oscillates around the momentum within half of
+the spin phase advance in the magnetic arc,
+$\Phi_s = \pi\gamma G/2 \approx 0.25$. Therefore, at the optimal parameters of
+the EDM measurement, $\gamma = 1.12$, the effective EDM signal is reduced by
+only a few percent.
+
+This gives the essence of the quasi-frozen spin
+concept~\cite{Senichev:2016rez}: the spin is not frozen relative to the
+momentum but continuously oscillates around an average fixed direction that
+coincides with the momentum direction. The question to be answered next is how
+to implement a variable MDM spin precession in the storage ring, which is
+needed for its zero average over the statistics, while providing a sufficient
+growth of the EDM signal.
+
+Two QFS options exist. In the first one, the magnetic and electric fields are
+completely separated in space: the magnetic field acts in the arcs and the
+electric field acts in the straight sections, which are realized as
+negative-curvature ``reverse'' electrostatic arcs. This option inherits the
+drawback of cylindrical electrodes, namely, a whole set of high-order field
+nonlinearities. In the second option, a small magnetic field of about
+\SI{100}{mT} is added to the spin-aligning E+B elements; it compensates the
+Lorentz force of the electric field and makes the elements straight. Such an
+E+B element is a Wien filter. The second option is the most appropriate one
+for rings not designed specifically for the EDM search, in particular for the NICA ring
+with bypass sections, whereas for the Nuclotron, where the free
+space is limited, the first option is the baseline.
+
+\subsection{Parameters of the Wien filters}
+\label{sec:wien}
+
+In a magnetic arc the momentum is rotated by the angle $\Phi^B_{arc}$, and the
+spin simultaneously rotates in the horizontal plane relative to the momentum
+by the angle
+\begin{equation}
+  \Phi_s^{arc} = \gamma G\,\Phi^B_{arc} .
+  \label{eq:phi_arc}
+\end{equation}
+In the E+B elements of the straight section, the spin rotation relative to the
+momentum has two components. In the electric field it is opposite to the
+momentum rotation,
+\begin{equation}
+  \Phi_s^{E} = -\left(\gamma G+\frac{\gamma}{\gamma+1}\right)\beta^2\,\Phi^{E}_{ss},
+  \label{eq:phi_e}
+\end{equation}
+where $\Phi^E_{ss}$ is the momentum rotation angle in the electric field. In
+the magnetic field the spin rotates in the same direction as the momentum,
+$\Phi_s^B = (\gamma G+1)\,\Phi^B_{ss}$, where $\Phi^B_{ss}$ is the momentum
+rotation angle in the magnetic field. Since the Lorentz force vanishes, the
+two momentum rotation angles are equal, $\Phi^E_{ss} = \Phi^B_{ss}$, and both
+spin rotations can be expressed through one of them, e.g., through
+$\Phi^B_{ss} = \frac{eB_{ss}}{m\gamma v}L_{ss}$, where $B_{ss}$ and $L_{ss}$
+are the magnetic field and the length of the straight element. The QFS
+condition requires that the net spin rotation in the E+B elements compensate
+the spin rotation in the arc, $\Phi_s^B + \Phi_s^E = \Phi_s^{arc}$. For an arc
+bending the beam by $\Phi^B_{arc}=\pi$ this gives
+\begin{equation}
+  (\gamma G+1)\,\Phi^B_{ss} - \left(\gamma G+\frac{\gamma}{\gamma+1}\right)\beta^2\,\Phi^E_{ss} = \pi\gamma G .
+  \label{eq:qfs}
+\end{equation}
+Simple transformations yield the parameters of the E+B elements:
+\begin{equation}
+  L_\Sigma E_{ss} = \frac{G}{G+1}\,\frac{mc^2}{e}\,\pi\beta^2\gamma^3,
+  \qquad
+  B_{ss} = -\frac{E_{ss}}{c\beta},
+  \label{eq:wien}
+\end{equation}
+where $L_\Sigma$ is the total length of the straight elements in one straight
+section. For a realistic electric field of \SI{100}{kV/cm}, the corresponding
+magnetic field is below \SI{96}{mT}. This simplifies the technical design: a
+permanent magnet or an air-core coil can be used.
+
+The material of this section has been reported
+in~\cite{Senichev:2016rez,Senichev:2024qtr,Melnikov:2025gdj,Melnikov:2025ytd,Senichev:2025jqf}.
