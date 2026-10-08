@@ -6,4 +6,6 @@ CDR(Conceptual design report) of EDM group
 
 Build in `latex/`: `pdflatex main && bibtex main && pdflatex main && pdflatex main`.
 
-Take BibTeX entries from [INSPIRE HEP](https://inspirehep.net) ("cite" → BibTeX) and keep their keys unchanged.
+- `support/check-references/` — checks that citations follow the REVTeX setup and that every BibTeX entry matches the INSPIRE HEP export. `python support/check-references/check_references.py`.
+
+Take BibTeX entries from [INSPIRE HEP](https://inspirehep.net) ("cite" → BibTeX) and keep their keys unchanged. A work absent from INSPIRE is allowed only with a `% Not in INSPIRE` comment on the entry.
