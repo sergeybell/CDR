@@ -1,81 +1,166 @@
-\RequirePackage{snapshot}
-\documentclass[a4paper,12pt,oneside]{article}
-%\usepackage[left=30mm, top=20mm, right=20mm, bottom=20mm]{geometry}
-% Использование русских букв в формулах
-\usepackage[warn]{mathtext}
-\usepackage{amsmath}
-\usepackage{fancyref}
+\documentclass[%
+  aps,
+  pra,
+  preprint,
+  a4paper,
+  amsmath,
+  amssymb,
+  floatfix,
+  longbibliography,
+  groupedaddress
+]{revtex4-2}
 
-\usepackage[figuresright]{rotating}
-\usepackage{amsfonts,amssymb,amsmath}
-\usepackage{boxedminipage}
-\usepackage{makeidx}
-\usepackage{url}
-
-% Выбор внутренней Tex-кодировки
-\usepackage[T2A]{fontenc}
-\usepackage{latexsym}
-% Выбор кодовой страницы документа
-%\usepackage[utf8]{inputenc} 
-%\usepackage [latin1]{inputenc}
-
-
-% Выбор языка документа
-%\usepackage[english,russian]{babel}
-\usepackage[english]{babel}
-\usepackage{graphics}
-\usepackage{epsfig}
-\usepackage[table]{xcolor}
-\usepackage{color,soul}
-%\usepackage[dvipsnames]{xcolor} %!!!
-\usepackage{todonotes}
-\usepackage{cite}
-\usepackage{soul}
+% REVTeX already loads natbib and, with the class options above, amsmath/amssymb.
+% Do not load cite, caption, or subcaption: they are incompatible with revtex4-2.
 \usepackage{graphicx}
-\usepackage{subcaption}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{longtable}
 \usepackage{makecell}
 \usepackage{siunitx}
 \sisetup{inter-unit-product=\ensuremath{\cdot}}
+\usepackage{etoolbox}
+\setlength{\marginparwidth}{2cm}
+\usepackage{todonotes}
+\usepackage{url}
+
+% REVTeX 4.2f does not recognize array.sty from 2024 and replaces both the
+% column parser and longtable with older copies. Those copies cannot build
+% p{} columns, so the parameter tables fail. Restore the current array and
+% longtable definitions after the class has patched them.
+\makeatletter
+\let\CDR@mkpream\@mkpream
+\let\CDR@classx\@classx
+\let\CDR@array\@array
+\let\CDR@tabular\@tabular
+\let\CDR@tabarray\@tabarray
+\let\CDR@@array\array
+\let\CDR@endarray\endarray
+\let\CDR@endtabular\endtabular
+\let\CDR@arrayacol\@arrayacol
+\let\CDR@tabacol\@tabacol
+\let\CDR@insert@column\insert@column
+\let\CDR@arraycr\@arraycr
+\let\CDR@xarraycr\@xarraycr
+\let\CDR@xargarraycr\@xargarraycr
+\let\CDR@yargarraycr\@yargarraycr
+\let\CDR@longtable\longtable
+\let\CDR@endlongtable\endlongtable
+\let\CDR@LT@start\LT@start
+\let\CDR@LT@end\LT@end@hd@ft
+\let\CDR@LT@array\LT@array
+\AtBeginDocument{%
+  \let\@mkpream\CDR@mkpream
+  \let\@classx\CDR@classx
+  \let\@array\CDR@array
+  \let\@tabular\CDR@tabular
+  \let\@tabarray\CDR@tabarray
+  \let\array\CDR@@array
+  \let\endarray\CDR@endarray
+  \let\endtabular\CDR@endtabular
+  \let\@arrayacol\CDR@arrayacol
+  \let\@tabacol\CDR@tabacol
+  \let\insert@column\CDR@insert@column
+  \let\@arraycr\CDR@arraycr
+  \let\@xarraycr\CDR@xarraycr
+  \let\@xargarraycr\CDR@xargarraycr
+  \let\@yargarraycr\CDR@yargarraycr
+  \let\longtable\CDR@longtable
+  \let\endlongtable\CDR@endlongtable
+  \let\LT@start\CDR@LT@start
+  \let\LT@end@hd@ft\CDR@LT@end
+  \let\LT@array\CDR@LT@array
+  % REVTeX removes \@makecol. longtable calls it when a table breaks
+  % across pages; the page body is already boxed in \@cclv.
+  \gdef\@makecol{\setbox\@outputbox\box\@cclv}%
+}
+\makeatother
+
+\graphicspath{{img/}}
 \hyphenation{pro-por-tional-ly}
 
-\graphicspath{{img/}} %Setting the graphicspath
+% Empty subcaptions previously came from subcaption. This panel environment
+% prints (a), (b), ... under each image without loading caption.sty.
+\newcounter{panel}
+\renewcommand{\thepanel}{\alph{panel}}
+\AtBeginEnvironment{figure}{\setcounter{panel}{0}}
+\newenvironment{panel}[2][c]{%
+  \begin{minipage}[#1]{#2}%
+    \centering
+    \refstepcounter{panel}%
+}{%
+    \par\vspace{0.35em}{\footnotesize(\thepanel)}\par
+  \end{minipage}%
+}
 
-\title{CONTRIBUTION from EDM group to be included to \\ SPRINT@NICA CONCEPTUAL DESIGN REPORT \\ ''Search for the electric dipole moment of light nuclei at the NICA complex''}
-
-% \author is typeset in a tabular cell, so the list is wrapped in \parbox to allow line breaks
-\author{\parbox{\dimexpr\textwidth-2\tabcolsep}{\centering\normalsize
-\textbf{JINR:} V.V.~Fimushkin, A.V.~Butenko, E.A.~Butenko, N.V.~Dunin, K.A.~Ivshin,
-M.V.~Kulikov, S.A.~Kostromin, V.P.~Ladygin, V.E.~Laryonov, E.M.~Syresin,
-A.N.~Solovev, I.S.~Volkov, V.A.~Lebedev, E.E.~Donets, V.V.~Bleko,
-N.M.~Piskunov, A.Ya.~Silenko, O.V.~Teryaev, Yu.N.~Uzikov, A.B.~Borisov,
-E.F.~Dlin\\[3pt]
-\textbf{MIPT:} Yu.N.~Filatov, A.N.~Zelenski, S.V.~Vinogradov, S.N.~Zhabin, I.S.~Yudin,
-A.A.~Chernikova, E.D.~Tsyplakov, I.V.~Lilienberg, A.I.~Chernyshov\\[3pt]
-\textbf{INR RAS:} A.E.~Aksentiev, A.S.~Belov, Yu.V.~Senichev, S.D.~Kolokolchikov,
-A.A.~Melnikov, P.~Palamarchuka\\[3pt]
-\textbf{ITP:} N.N.~Nikolaev\\[3pt]
-\textbf{STL Zaryad:} A.M.~Kondratenko, M.A.~Kondratenko\\[3pt]
-\textbf{INP BSU:} V.G.~Baryshevsky, S.V.~Anischenko, A.A.~Gurinovich\\[3pt]
-\textbf{BINP SB RAS:} D.K.~Toporkov
-}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                %
-%    BEGINNING OF TEXT                           %
-%                                                %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+\title{Contribution from the EDM group to be included in the\\
+SPRINT@NICA Conceptual Design Report\\
+Search for the electric dipole moment of light nuclei at the NICA complex}
+
+\author{V.~V. Fimushkin}
+\author{A.~V. Butenko}
+\author{E.~A. Butenko}
+\author{N.~V. Dunin}
+\author{K.~A. Ivshin}
+\author{M.~V. Kulikov}
+\author{S.~A. Kostromin}
+\author{V.~P. Ladygin}
+\author{V.~E. Laryonov}
+\author{E.~M. Syresin}
+\author{A.~N. Solovev}
+\author{I.~S. Volkov}
+\author{V.~A. Lebedev}
+\author{E.~E. Donets}
+\author{V.~V. Bleko}
+\author{N.~M. Piskunov}
+\author{A.~Ya. Silenko}
+\author{O.~V. Teryaev}
+\author{Yu.~N. Uzikov}
+\author{A.~B. Borisov}
+\author{E.~F. Dlin}
+\affiliation{JINR}
+
+\author{Yu.~N. Filatov}
+\author{A.~N. Zelenski}
+\author{S.~V. Vinogradov}
+\author{S.~N. Zhabin}
+\author{I.~S. Yudin}
+\author{A.~A. Chernikova}
+\author{E.~D. Tsyplakov}
+\author{I.~V. Lilienberg}
+\author{A.~I. Chernyshov}
+\affiliation{MIPT}
+
+\author{A.~E. Aksentiev}
+\author{A.~S. Belov}
+\author{Yu.~V. Senichev}
+\author{S.~D. Kolokolchikov}
+\author{A.~A. Melnikov}
+\author{P. Palamarchuka}
+\affiliation{INR RAS}
+
+\author{N.~N. Nikolaev}
+\affiliation{ITP}
+
+\author{A.~M. Kondratenko}
+\author{M.~A. Kondratenko}
+\affiliation{STL Zaryad}
+
+\author{V.~G. Baryshevsky}
+\author{S.~V. Anischenko}
+\author{A.~A. Gurinovich}
+\affiliation{INP BSU}
+
+\author{D.~K. Toporkov}
+\affiliation{BINP SB RAS}
 
 \maketitle
- 
- \newpage
 
 \tableofcontents
 
- \newpage
+\clearpage
 
 \input{chapters/01-introduction}
 \input{chapters/02-principles}
@@ -89,7 +174,11 @@ A.A.~Melnikov, P.~Palamarchuka\\[3pt]
 \input{chapters/10-axion}
 \input{chapters/11-conclusion}
 
-\bibliographystyle{unsrt}
+\begin{acknowledgments}
+This work was supported by the Russian Science Foundation, grant
+No.~25-72-30005 (\url{https://rscf.ru/project/25-72-30005/}).
+\end{acknowledgments}
+
 \bibliography{bib/references}
 
 \end{document}

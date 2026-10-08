@@ -232,4 +232,5 @@ __marimo__/
 *.fdb_latexmk
 *.synctex.gz
 *.dep
+*Notes.bib
 latex/main.pdf
