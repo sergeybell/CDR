@@ -21,7 +21,7 @@ LATEX = ROOT / "latex"
 IMG = LATEX / "img"
 BIB = LATEX / "bib" / "references.bib"
 CSL = HERE / "american-physics-society.csl"
-DEFAULT_OUT = ROOT / "authors" / "ЮВСеничев" / "CDR_contribution.docx"
+DEFAULT_OUT = ROOT / "authors" / "ЮВСеничев" / "CDR_contribution_3.docx"
 
 SUPERSCRIPT = str.maketrans("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")
 
@@ -149,8 +149,14 @@ def collect_labels(text):
 
 
 def resolve_refs(text, labels):
-    text = replace_command(text, "eqref", lambda _o, key, _p: f"({labels[key]})")
-    text = replace_command(text, "ref", lambda _o, key, _p: labels[key])
+    def eqref(_o, key, _p):
+        return f"({labels[key]})" if key in labels else f"({key})"
+
+    def ref(_o, key, _p):
+        return labels[key] if key in labels else key
+
+    text = replace_command(text, "eqref", eqref)
+    text = replace_command(text, "ref", ref)
     return re.sub(r"\\label\{[^}]*\}", "", text)
 
 
@@ -236,10 +242,17 @@ def convert_units(text):
 # ---------------------------------------------------------------------------
 
 def image_path(name):
-    path = IMG / f"{name}.png"
-    if not path.exists():
-        raise FileNotFoundError(path)
-    return path.as_posix()
+    stem = Path(name).name
+    if (IMG / name).is_file():
+        return (IMG / name).as_posix()
+    for ext in (".png", ".PNG", ".jpg", ".jpeg", ".JPG", ".pdf", ".eps"):
+        path = IMG / f"{stem}{ext}"
+        if path.is_file():
+            return path.as_posix()
+        path = IMG / f"{Path(stem).stem}{ext}"
+        if path.is_file():
+            return path.as_posix()
+    raise FileNotFoundError(IMG / stem)
 
 
 def width_of(options):
@@ -257,18 +270,20 @@ def convert_figures(text):
         cap_start = body.index(r"\caption")
         caption, cap_end = braced(body, cap_start + len(r"\caption"))
         body = body[:cap_start] + body[cap_end:]
-        caption = f"\\caption{{Figure {count}. {' '.join(caption.split())}}}"
+        caption = f"\\caption{{{' '.join(caption.split())}}}"
 
         if r"\begin{panel}" not in body:
-            opts, name = re.search(r"\\includegraphics(?:\[([^\]]*)\])?\{([^}]*)\}",
-                                   body).groups()
+            inc = re.search(r"\\includegraphics\*?(?:\[([^\]]*)\])?\{([^}]*)\}", body)
+            if not inc:
+                return m.group(0)
+            opts, name = inc.groups()
             graphic = f"\\includegraphics[width={width_of(opts):.2f}\\textwidth]{{{image_path(name)}}}"
             return f"\\begin{{figure}}\n{graphic}\n{caption}\n\\end{{figure}}"
 
         rows, letter = [], ord("a")
         for row in re.split(r"\\\\(?:\[[^\]]*\])?", body):
             panels = re.findall(r"\\begin\{panel\}(?:\[[^\]]*\])?\{([0-9.]+)\\textwidth\}"
-                                r".*?\\includegraphics(?:\[[^\]]*\])?\{([^}]*)\}", row, re.S)
+                                r".*?\\includegraphics\*?(?:\[[^\]]*\])?\{([^}]*)\}", row, re.S)
             if not panels:
                 continue
             images = " & ".join(

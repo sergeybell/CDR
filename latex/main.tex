@@ -7,7 +7,7 @@
   amssymb,
   floatfix,
   longbibliography,
-  groupedaddress
+  superscriptaddress
 ]{revtex4-2}
 
 % REVTeX already loads natbib and, with the class options above, amsmath/amssymb.
@@ -74,10 +74,51 @@
   % across pages; the page body is already boxed in \@cclv.
   \gdef\@makecol{\setbox\@outputbox\box\@cclv}%
 }
+% Date without the ``Dated:'' prefix; keep mixed case (APS uppercases RRAP).
+\def\Dated@name{}%
+\def\@gobble@leavemode@uppercase#1#2{}%
+% Hide subsubsections/paragraphs in the TOC. Replace REVTeX's adaptive
+% \l@@sections (which drifts after a page break in long TOCs) with fixed
+% indents so every subsection line aligns.
+\def\l@subsubsection#1#2{}%
+\def\l@paragraph#1#2{}%
+\def\l@section#1#2{%
+  \addpenalty{\@secpenalty}%
+  \addvspace{0.85em plus 0.2em}%
+  \begingroup
+    \parindent\z@\rightskip\@pnumwidth\parfillskip-\@pnumwidth
+    \def\numberline##1{%
+      \hb@xt@3.0em{\if\relax\detokenize{##1}\relax\else##1.\fi\hfil}}%
+    \bfseries\leavevmode#1\nobreak\hfil\nobreak
+    \hb@xt@\@pnumwidth{\hss\mdseries#2}\par
+  \endgroup
+}%
+\def\l@subsection#1#2{%
+  \addpenalty{\@secpenalty}%
+  \begingroup
+    \parindent\z@\leftskip2.2em\relax
+    \rightskip\@pnumwidth\parfillskip-\@pnumwidth
+    \def\numberline##1{\hb@xt@1.6em{##1.\hfil}}%
+    \leavevmode#1\nobreak\hfil\nobreak
+    \hb@xt@\@pnumwidth{\hss#2}\par
+  \endgroup
+}%
 \makeatother
 
 \graphicspath{{img/}}
 \hyphenation{pro-por-tional-ly}
+
+% Keep floats near their first citation and avoid large empty regions.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
+\setlength{\textfloatsep}{12pt plus 4pt minus 3pt}
+\setlength{\floatsep}{10pt plus 3pt minus 3pt}
+\setlength{\intextsep}{10pt plus 3pt minus 3pt}
 
 % Empty subcaptions previously came from subcaption. This panel environment
 % prints (a), (b), ... under each image without loading caption.sty.
@@ -95,84 +136,57 @@
 
 \begin{document}
 
-\title{Contribution from the EDM group to be included in the\\
-SPRINT@NICA Conceptual Design Report\\
-Search for the electric dipole moment of light nuclei at the NICA complex}
-
-\author{V.~V. Fimushkin}
-\author{A.~V. Butenko}
-\author{E.~A. Butenko}
-\author{N.~V. Dunin}
-\author{K.~A. Ivshin}
-\author{M.~V. Kulikov}
-\author{S.~A. Kostromin}
-\author{V.~P. Ladygin}
-\author{V.~E. Laryonov}
-\author{E.~M. Syresin}
-\author{A.~N. Solovev}
-\author{I.~S. Volkov}
-\author{V.~A. Lebedev}
-\author{E.~E. Donets}
-\author{V.~V. Bleko}
-\author{N.~M. Piskunov}
-\author{A.~Ya. Silenko}
-\author{O.~V. Teryaev}
-\author{Yu.~N. Uzikov}
-\author{A.~B. Borisov}
-\author{E.~F. Dlin}
-\affiliation{JINR}
-
-\author{Yu.~N. Filatov}
-\author{A.~N. Zelenski}
-\author{S.~V. Vinogradov}
-\author{S.~N. Zhabin}
-\author{I.~S. Yudin}
-\author{A.~A. Chernikova}
-\author{E.~D. Tsyplakov}
-\author{I.~V. Lilienberg}
-\author{A.~I. Chernyshov}
-\affiliation{MIPT}
+\title{PROPOSAL from INR RAS group to be included in the\\
+SPRINT@NICA Conceptual Design Report}
+\date{\today}
 
 \author{A.~E. Aksentiev}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{Moscow Institute of Physics and Technology, Dolgoprudny 141701, Russia}
+\affiliation{National Research Nuclear University MEPhI, Moscow 115409, Russia}
+
 \author{A.~S. Belov}
-\author{Yu.~V. Senichev}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+
 \author{S.~D. Kolokolchikov}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{Moscow Institute of Physics and Technology, Dolgoprudny 141701, Russia}
+
 \author{A.~A. Melnikov}
-\author{P. Palamarchuka}
-\affiliation{INR RAS}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{Moscow Institute of Physics and Technology, Dolgoprudny 141701, Russia}
+\affiliation{Landau Institute for Theoretical Physics, Chernogolovka 142432, Russia}
 
 \author{N.~N. Nikolaev}
-\affiliation{ITP}
+\affiliation{Landau Institute for Theoretical Physics, Chernogolovka 142432, Russia}
 
-\author{A.~M. Kondratenko}
-\author{M.~A. Kondratenko}
-\affiliation{STL Zaryad}
+\author{P. Palamarchuka}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{National Research Nuclear University MEPhI, Moscow 115409, Russia}
 
-\author{V.~G. Baryshevsky}
-\author{S.~V. Anischenko}
-\author{A.~A. Gurinovich}
-\affiliation{INP BSU}
+\author{Yu.~V. Senichev}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{Moscow Institute of Physics and Technology, Dolgoprudny 141701, Russia}
 
-\author{D.~K. Toporkov}
-\affiliation{BINP SB RAS}
+\author{A.~Ya. Silenko}
+\affiliation{Joint Institute for Nuclear Research, Dubna 141980, Russia}
 
+% Vertically center the title block on the first page.
+\null\vspace*{\fill}
 \maketitle
+\vspace*{\fill}
+\newpage
 
 \tableofcontents
-
-\clearpage
+\newpage
 
 \input{chapters/01-introduction}
-\input{chapters/02-principles}
+\input{chapters/02-qfs}
 \input{chapters/03-nica-bypass}
 \input{chapters/04-nuclotron}
 \input{chapters/05-specialized-ring}
-\input{chapters/06-gamma-transition}
-\input{chapters/07-spinor}
-\input{chapters/08-electrostatics}
-\input{chapters/09-systematics}
-\input{chapters/10-axion}
-\input{chapters/11-conclusion}
+\input{chapters/06-spinor}
+\input{chapters/07-axion}
 
 \begin{acknowledgments}
 This work was supported by the Russian Science Foundation, grant

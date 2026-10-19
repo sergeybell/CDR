@@ -53,22 +53,19 @@ resembles a circle.
   \label{fig:pring_layout}
 \end{figure}
 
-Table~\ref{tab:pring} summarizes the ring parameters required to estimate its
-dimensions and cost.
+Tables~\ref{tab:pring} and~\ref{tab:pring-cont} summarize the ring parameters
+required to estimate its dimensions and cost.
 
-{\small
-  \begin{longtable}{p{0.55\textwidth}p{0.38\textwidth}}
-    \caption{Parameters of the frozen spin electrostatic ring for the proton
-      EDM search.}
-    \label{tab:pring} \\
+\begin{table}[!htbp]
+  \caption{Parameters of the frozen spin electrostatic ring for the proton
+    EDM search.}
+  \label{tab:pring}
+  \centering
+  \renewcommand{\baselinestretch}{1}\small\selectfont
+  \begin{tabular}{@{}p{0.60\linewidth}@{\hspace{1em}}p{0.32\linewidth}@{}}
     \toprule
     Parameter & Value \\
     \midrule
-    \endfirsthead
-    \toprule
-    Parameter & Value \\
-    \midrule
-    \endhead
     Circumference, m & 419.1 \\
     Symmetry order (number of arcs and straight sections) & 5 \\
     Injection energy, MeV & 20 \\
@@ -81,6 +78,19 @@ dimensions and cost.
       & 0.143--0.429 \\
     Harmonic number & 20 \\
     RF frequency at the beginning and end of the cycle, MHz & 2.8--8.6 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+  \caption{Parameters of the frozen spin electrostatic ring for the proton
+    EDM search (continued).}
+  \label{tab:pring-cont}
+  \centering
+  \renewcommand{\baselinestretch}{1}\small\selectfont
+  \begin{tabular}{@{}p{0.60\linewidth}@{\hspace{1em}}p{0.32\linewidth}@{}}
+    \toprule
+    Parameter & Value \\
     \midrule
     \multicolumn{2}{c}{\textbf{Arcs}} \\
     \midrule
@@ -113,8 +123,8 @@ dimensions and cost.
     Quadrupole gradients, T/m & QF $= 7.93$, QD $= -7.11$ \\
     Drift length between adjacent quadrupoles, m & 6.0 \\
     \bottomrule
-  \end{longtable}
-}
+  \end{tabular}
+\end{table}
 
 As a second option, a racetrack ring with two arcs and dispersion suppressors
 at both ends of each arc was considered (Fig.~\ref{fig:pring_suppressor}). One
@@ -220,39 +230,23 @@ and at its ends and comprises eight FODO cells.
 
 As in the electrostatic proton ring, the dispersion modulation introduced in
 the deuteron lattice provides suitable locations for sextupoles suppressing the
-spin chromaticity. Figure~\ref{fig:dring_twiss} shows the Twiss functions of
-the whole ring with a circumference of \SI{146}{m}; its layout is shown in
-Fig.~\ref{fig:dring_layout}. The main parameters of the synchrotron for the
-deuteron EDM search at \SI{270}{MeV} per nucleon are listed in
-Table~\ref{tab:dring}.
+spin chromaticity. The main parameters of the synchrotron for the deuteron EDM
+search at \SI{270}{MeV} per nucleon are listed in
+Tables~\ref{tab:dring} and~\ref{tab:dring-cont}.
+Figure~\ref{fig:dring_twiss} shows the Twiss functions of the whole ring with a
+circumference of \SI{146}{m}; its layout is shown in
+Fig.~\ref{fig:dring_layout}.
 
-\begin{figure}[htbp]
+\begin{table}[!htbp]
+  \caption{Parameters of the frozen spin ring with E+B
+    deflectors for the deuteron EDM search.}
+  \label{tab:dring}
   \centering
-  \includegraphics[width=0.85\textwidth]{dring_twiss}
-  \caption{Twiss functions along the frozen spin deuteron ring.}
-  \label{fig:dring_twiss}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.6\textwidth]{dring_layout}
-  \caption{Layout and dimensions of the frozen spin deuteron ring.}
-  \label{fig:dring_layout}
-\end{figure}
-
-{\small
-  \begin{longtable}{p{0.55\textwidth}p{0.38\textwidth}}
-    \caption{Parameters of the frozen spin ring with E+B
-      deflectors for the deuteron EDM search.}
-    \label{tab:dring} \\
+  \renewcommand{\baselinestretch}{1}\small\selectfont
+  \begin{tabular}{@{}p{0.60\linewidth}@{\hspace{1em}}p{0.32\linewidth}@{}}
     \toprule
     Parameter & Value \\
     \midrule
-    \endfirsthead
-    \toprule
-    Parameter & Value \\
-    \midrule
-    \endhead
     Circumference, m & 145.85 \\
     Symmetry order (number of arcs and straight sections) & 2 \\
     Injection energy, MeV/u & 40 \\
@@ -268,6 +262,19 @@ Table~\ref{tab:dring}.
     Length of the quarter-wave RF cavity, m & 1.502 \\
     Momentum acceptance of the separatrix at maximum energy & $1.31\times10^{-3}$ \\
     Relative momentum spread in the bunch & $5\times10^{-4}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+  \caption{Parameters of the frozen spin ring with E+B
+    deflectors for the deuteron EDM search (continued).}
+  \label{tab:dring-cont}
+  \centering
+  \renewcommand{\baselinestretch}{1}\small\selectfont
+  \begin{tabular}{@{}p{0.60\linewidth}@{\hspace{1em}}p{0.32\linewidth}@{}}
+    \toprule
+    Parameter & Value \\
     \midrule
     \multicolumn{2}{c}{\textbf{Arcs}} \\
     \midrule
@@ -300,8 +307,22 @@ Table~\ref{tab:dring}.
     Quadrupole gradients, kG/cm & QF $= 0.734$, QD $= -0.782$ \\
     Free drift spaces between adjacent quadrupoles, m & $12\times 3.2$ \\
     \bottomrule
-  \end{longtable}
-}
+  \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{dring_twiss}
+  \caption{Twiss functions along the frozen spin deuteron ring.}
+  \label{fig:dring_twiss}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{dring_layout}
+  \caption{Layout and dimensions of the frozen spin deuteron ring.}
+  \label{fig:dring_layout}
+\end{figure}
 
 \subsection{Summary}
 
@@ -314,4 +335,4 @@ intended exclusively for experiments on the violation of fundamental
 symmetries.
 
 The material of this section has been reported
-in~\cite{Palamarchuka:2026pyv,Kolokolchikov:2026xbv}.
+in~\cite{Palamarchuka:2026pyv}.

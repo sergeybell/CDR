@@ -4,12 +4,12 @@
 \subsection{Modified NICA lattice for the EDM search}
 
 The NICA lattice was not designed for EDM research; hence the only option is
-the quasi-frozen spin concept, which can be realized for deuterons. The
-adaptation strategy relies on two facts. First, the straight sections of the
-collider are fully occupied by the equipment of the MPD and SPD experiments.
-Second, these detectors and their interaction points are not needed for the
-EDM search. The simplest solution is therefore to introduce bypasses, as shown
-in Fig.~\ref{fig:bypass_layout}.
+the quasi-frozen spin concept of Sec.~\ref{sec:qfs}, which can be realized for
+deuterons. The adaptation strategy relies on two facts. First, the straight
+sections of the collider are fully occupied by the equipment of the MPD and SPD
+experiments. Second, these detectors and their interaction points are not
+needed for the EDM search. The simplest solution is therefore to introduce
+bypasses, as shown in Fig.~\ref{fig:bypass_layout}.
 
 \begin{figure}[htbp]
   \centering
@@ -49,14 +49,12 @@ and the dynamic aperture in both transverse planes.
 
 The linear part of the dynamic aperture, about \SI{2000}{mm.mrad},
 significantly exceeds the required value in both planes. For an electric field
-limited to about \SI{100}{kV/cm}, Eq.~\eqref{eq:wien} gives a total length of the
+limited to about \SI{100}{kV/cm}, Eq.~\eqref{eq:length_min} gives a total length of the
 E+B elements of about 25--\SI{30}{m} per bypass, which is 30\% of the bypass
 length. Spin-orbit tracking shows that the spin deviates from the momentum by
 less than \ang{10}; the simulation for the three spin projections gives a
-deviation within $\pm\ang{7.5}$.\todo[inline]{The source document gives both
-values (\ang{10} and $\pm\ang{7.5}$) in two versions of this paragraph; to be
-unified.} Despite this deviation, the polarization asymmetry
-measured at the polarimeter location remains constant.
+deviation within $\pm\ang{7.5}$. Despite this deviation, the polarization
+asymmetry measured at the polarimeter location remains constant.
 
 \subsection{Lattice parameters}
 
@@ -335,12 +333,13 @@ filters of the straight section (Fig.~\ref{fig:bypass_spin_components}).
 \end{figure}
 
 The spin chromaticity is the dependence of the spin precession frequency on the
-particle orbit length. Because of it, the spins of the beam particles spread
-around the invariant spin axis $\bar{n}$. This process, called spin
-decoherence, is irrelevant for experiments with a non-zero expected
-polarization along $\bar{n}$. In EDM experiments, however, the polarization
-component orthogonal to $\bar{n}$ is of interest; its expectation value is
-zero, hence the importance of the spin coherence time (SCT).
+particle orbit length~\cite{Senichev:2021wcy}. Because of it, the spins of the
+beam particles spread around the invariant spin axis $\bar{n}$. This process,
+called spin decoherence~\cite{Melnikov:2023cms,Aksentev:2022boh,Aksentev:2022wyn},
+is irrelevant for experiments with a non-zero expected polarization along
+$\bar{n}$. In EDM experiments, however, the polarization component orthogonal
+to $\bar{n}$ is of interest; its expectation value is zero, hence the
+importance of the spin coherence time (SCT).
 
 The spin chromaticity of the beam can be compensated with sextupole families
 to a level that provides a sufficiently long spin coherence time
@@ -366,7 +365,7 @@ discussed in the next subsection.
 
 \subsection{Betatron chromaticity and spin coherence}
 
-According to the theory of Ref.~\cite{Melnikov:JETPL2023}, the main cause of
+According to the theory of Ref.~\cite{Melnikov:2023_jetpl_decoherence}, the main cause of
 spin decoherence is the deviation of the particle energy from the equilibrium
 value:
 \begin{equation}
@@ -608,22 +607,21 @@ $\kappa$, whose contribution can be compensated by beam cooling.
   \end{tabular}
 \end{table}
 
-\subsection{Summary}
+\subsection{Conclusion}
 
-For EDM experiments, NICA must operate as a storage ring. To this end, a
-modification is proposed in which bypass channels create alternative straight
-sections parallel to the original ones. These straight sections accommodate
-Wien filters that compensate the MDM spin rotation in the arcs. Since the arcs
-remain unchanged, NICA can still be used for other experiments.
+For EDM experiments it is necessary to use NICA as a storage ring. For this
+reason, a modernization was considered by creation of alternative straight
+sections parallel to the original ones by using bypass channels. Also, the
+straight sections have the ability to place special elements---Wien
+filters---to compensate the spin rotation in the arcs. As the arcs remain
+unchanged, this allows one to use NICA in various experiments.
 
-Two basic bypass layouts were considered, and finally the most realistic
-lattice with a fully regular straight section was obtained. The final design
-meets all lattice requirements. Spin-orbit simulations with optimized Wien
-filter fields show that the spin recovers its orientation in the straight
-section, so that the quasi-frozen spin method can be implemented at NICA with
-bypasses. The simultaneous control of the spin coherence and the betatron
-chromaticity is under study. The same lattice also makes it possible to use
-NICA as an axion antenna (Section~\ref{sec:axion}).
+Two principal schemes of the bypass channel were considered, and finally the
+most realistic case was obtained, where the straight section is fully regular.
+The final structure satisfies all necessary magneto-optics requirements.
+Spin-tracking research with optimized Wien filters was made, and simulations
+show that the spin restores its orientation at the straight sections. The
+quasi-frozen spin method can be implemented in bypass NICA.
 
 The material of this section has been reported
-in~\cite{Senichev:2022ide,Kolokolchikov:2023zpy,Kolokolchikov:2023zhf,Kolokolchikov:LaPlas2023,Aksentev:2023xnd,Melnikov:JETPL2023,Melnikov:2024gcc,Aksentev:2024tmx,Senichev:2024qtr,Senichev:2025jqf}.
+in~\cite{Senichev:2022ide,Kolokolchikov:2023cla,Kolokolchikov:2023zpy,Kolokolchikov:2023zhf,Aksentev:2022boh,Aksentev:2023xnd,Melnikov:2023_jetpl_decoherence,Melnikov:2024gcc,Aksentev:2024tmx,Senichev:2024qtr,Senichev:2025jqf}.

@@ -1,14 +1,16 @@
 """Check the CDR bibliography against REVTeX and INSPIRE HEP.
 
-REVTeX formats whatever BibTeX it is given, and this project takes those entries
-from INSPIRE unchanged (cite, then BibTeX, same key). The check has two parts:
+REVTeX formats whatever BibTeX it is given. Works that exist in INSPIRE must
+keep the official INSPIRE texkey. Only entries marked ``% Not in INSPIRE`` may
+use a readable ``Author:Year_topic`` key. The check has two parts:
 
 - REVTeX: ``\\bibliography`` is set, ``\\bibliographystyle`` is not, citations
   use natbib commands, every key resolves, and a local entry still has the
   fields BibTeX needs.
-- INSPIRE: each entry matches the BibTeX INSPIRE serves for that texkey.
-  A work that is genuinely absent is allowed only with a ``% Not in INSPIRE``
-  comment immediately above the entry.
+- INSPIRE: each entry is matched by DOI (preferred) or, if there is no DOI,
+  by the local key as an INSPIRE texkey. Field values must match the INSPIRE
+  BibTeX export. A work that is genuinely absent is allowed only with a
+  ``% Not in INSPIRE`` comment immediately above the entry.
 
 Usage: python support/check-references/check_references.py [--offline]
 """
@@ -24,7 +26,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-LATEX = ROOT / "latex"
+DEFAULT_LATEX = ROOT / "latex"
 
 REVTEX_TYPES = {
     "article", "book", "booklet", "conference", "inbook", "incollection",
@@ -105,6 +107,7 @@ def read_value(text, start):
 
 
 def preceding_note(text, start):
+    """Comment lines immediately above the entry; stop at the first blank line."""
     notes = []
     pos = start
     while pos > 0:
@@ -113,6 +116,8 @@ def preceding_note(text, start):
         if line.startswith("%"):
             notes.append(line)
         elif line:
+            break
+        else:
             break
         pos = line_start
     return "\n".join(reversed(notes))
@@ -290,8 +295,15 @@ def indent(text):
 
 
 def check_inspire(report, entries):
-    lookup = [entry for entry in entries if not entry.local_only]
-    official = inspire_by_texkey([entry.key for entry in lookup])
+    # Prefer DOI lookup so renamed or alternate texkeys still match INSPIRE.
+    need_texkey = []
+    for entry in entries:
+        if entry.local_only:
+            continue
+        if not entry.value("doi"):
+            need_texkey.append(entry.key)
+    official = inspire_by_texkey(need_texkey) if need_texkey else {}
+
     for entry in entries:
         if entry.local_only:
             doi = entry.value("doi")
@@ -304,15 +316,17 @@ def check_inspire(report, entries):
                     f"но по DOI это {found.key}\n  эталон:\n{indent(found.source)}"
                 )
             continue
-        found = official.get(entry.key)
-        if found is None and (doi := entry.value("doi")):
+
+        found = None
+        doi = entry.value("doi")
+        if doi:
             found = inspire_by_doi(doi)
             if found and found.key != entry.key:
-                report.error(
-                    f"{entry.key}: в INSPIRE эта работа записана как {found.key}\n"
-                    f"  эталон:\n{indent(found.source)}"
+                report.warn(
+                    f"{entry.key}: локальный ключ; в INSPIRE texkey = {found.key}"
                 )
-                continue
+        if found is None:
+            found = official.get(entry.key)
         if found is None:
             report.error(
                 f"{entry.key}: нет в INSPIRE HEP. Если работы там действительно нет, "
@@ -322,18 +336,37 @@ def check_inspire(report, entries):
         compare(report, entry, found)
 
 
+def resolve_bib_path(latex_dir, bib_name):
+    """Resolve \\bibliography{...} relative to the LaTeX root or as an absolute path."""
+    name = bib_name.strip()
+    if not name.endswith(".bib"):
+        name = f"{name}.bib"
+    candidate = (latex_dir / name).resolve()
+    if candidate.is_file():
+        return candidate
+    raise FileNotFoundError(f"не найден файл библиографии: {candidate}")
+
+
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="Проверка ссылок CDR: REVTeX и INSPIRE HEP")
     parser.add_argument("--offline", action="store_true", help="только проверки REVTeX, без запроса к INSPIRE")
+    parser.add_argument(
+        "--latex",
+        type=Path,
+        default=DEFAULT_LATEX,
+        help="корень LaTeX-сборки (по умолчанию latex/)",
+    )
     args = parser.parse_args()
 
-    main_text = (LATEX / "main.tex").read_text(encoding="utf-8")
+    latex_dir = args.latex if args.latex.is_absolute() else (ROOT / args.latex)
+    latex_dir = latex_dir.resolve()
+    main_text = (latex_dir / "main.tex").read_text(encoding="utf-8")
     bib_name = re.search(r"\\bibliography\s*\{([^}]+)\}", main_text).group(1)
-    bib_path = LATEX / f"{bib_name}.bib"
+    bib_path = resolve_bib_path(latex_dir, bib_name)
     entries = parse_bib(bib_path.read_text(encoding="utf-8"))
-    cites = citations(LATEX)
+    cites = citations(latex_dir)
     report = Report()
     check_revtex(report, main_text, entries, cites)
 

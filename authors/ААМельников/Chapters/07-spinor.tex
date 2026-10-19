@@ -1,0 +1,323 @@
+\newpage
+
+\section{Matrix description of spin dynamics for EDM rings}
+\label{sec:spinor}
+
+
+\subsection{Introduction}
+The idea to measure the EDM value comes from the development of the FS method \cite{srEDM:2008, Farley:2004hp}, where the observed signal is a vertical build-up of polarization due to the EDM for a longitudinally polarized beam. The main concern in the experiment is the influence of systematic effects. 
+
+Another method for measuring the EDM of charged particles, which allows achieving an accuracy of $10^{-29}$ $e\cdot$cm,
+is the frequency domain method \cite{Senichev:Freq_domain_method}. In this case, the spin precession frequency is measured, caused by the presence of both the Magnetic Dipole Moment (MDM) and the Electric Dipole Moment (EDM). The measurements are taken at a polarimeter in a structure with field perturbations in the elements. The MDM-induced spin-precession frequency in a Quasi-Frozen Spin (QFS)  \cite{Senichev:QFS_IPAC22} state occurs around the axis lying in the ring plane. In the concept of linear contribution of systematic errors to the total value of the measured frequency, it is possible to
+subtract systematic effects caused by the MDM by injecting
+the beam in the opposite direction. Therefore, for high precision EDM experiment an analytical expression for the measured frequency and the direction of the spin precession axis has to be derived. The correct estimate of the MDM-induced systematics is a necessary guidance to conduct the experiment on the EDM signal evaluation. The estimates of the MDM resonance strength in the QFS lattice are also presented below.
+
+Spin vector of a particle $\vec{S}$ at each element of a storage ring with electric $\vec{E}$ or magnetic $\vec{B}$ field precesses around the \textit{local} $\vec{\Omega}$ with a frequency determined by the T-BMT equation (\ref{eq:tbmt}).
+
+After each element the $\vec{S}$ is rotated around $\vec{\Omega}$ at an angle $\phi=\Omega dt$ that gives a hint that spin motion can be described in matrix notation. The latter is also motivated by the fact that the key measured values in the experiment are the spin-tune $\nu_s$ and the direction of the invariant axis $\vec{n}$ at the observation point at azimuth $\theta$. These properties are the \textit{integral} characteristics of the ring and can be easily calculated in the spinor formalism. 
+
+Here the main features of the spinor algebra \cite{Handbook} are presented briefly.
+The coordinate frame is specified by the indices: (1, 2, 3) = (radial outward, longitudinal forward, vertical up). The Pauli matrices are: $\vec{\sigma}$~=~($\sigma_1$, $\sigma_2$, $\sigma_3$).
+$\vec{\sigma}$~=~$\left(\begin{bmatrix}0 & 1\\1 & 0\end{bmatrix},~\begin{bmatrix}0 & -i\\i & 0\end{bmatrix},~\begin{bmatrix}1 & 0\\0 & -1\end{bmatrix}\right)$. The rotation operator $M$ at an angle $\phi$ around $\vec{n}$ is presented via:
+\begin{equation}\label{eq:Map}
+	M=\exp\left[-i(\vec{\sigma}\cdot\vec{n})\frac{\phi}{2}\right]=\cos\left(\frac{\phi}{2}\right)-i(\vec{\sigma}\cdot\vec{n})\sin\left(\frac{\phi}{2}\right).
+\end{equation} 
+For a storage ring comprising $N$ elements the total Map is: 
+\begin{equation}
+	M=M_NM_{N-1}\dots M_2M_1.
+\end{equation}   
+%\subsection{Introduction}
+From (\ref{eq:Map}) it is evident that at an observation point at azimuth $\theta$:
+\begin{equation}\label{eq:nu_s}
+	\cos(\pi\nu_s)=\frac{1}{2}\textup{tr}(M(\theta)).
+\end{equation}
+\begin{equation}\label{eq:n}
+	\vec{n}(\theta)=\frac{i/2}{\sin(\pi\nu_s)}\textup{tr}(\vec{\sigma}M(\theta)).
+\end{equation}
+
+
+%For an element rotating $\vec{S}$ around the vertical axis at an angle $\phi$, e.g. bend dipole or Wien filter (WF) the rotation operator takes the form:
+%\begin{equation}
+%M_{Dip,WF}=\cos\left(\frac{\phi}{2}\right)-i\sigma_3\sin\left(\frac{\phi}{2}\right).
+%\end{equation}
+%For a radial perturbation rotating $\vec{S}$ at an angle $\psi$ the rotation operator is:    
+%\begin{equation}
+%M_{Perturb}=\cos\left(\frac{\psi}{2}\right)-i\sigma_1\sin\left(\frac{\psi}{2}\right).
+%\end{equation}
+
+
+The method of describing spin dynamics in a storage ring for high precision EDM experiments has been initiated and developed by the JEDI collaboration for the COoler SYnchrotron COSY \cite{Rathmann:2019lwi, JEDI:2023trd, COSY:SpinTuneMapping, JEDI:2026dwx}. Mapping technique was used to describe spin motion in a magnetic ring and a resonant radio-frequency Wien filter. 
+
+
+\subsection{QFS structure without imperfection fields}
+Let us consider a structure of the quasi-frozen spin type for searching for the EDM \cite{Senichev:QFS_IPAC22}, consisting of an ideal magnetic ring and a static Wien filter in the straight section (Fig.~\ref{fig:1_Matrix}). The rotation of the spin vector in the magnetic ring occurs around the sum vector $\vec{\Omega}=\vec{\Omega}_{MDM}+\vec{\Omega}_{EDM}$. The angle between $\vec{\Omega}_{MDM}$ and $\vec{\Omega}$ is $\xi$, that follows from Eq. (\ref{eq:tbmt}) \cite{Rathmann:2019lwi}:
+\begin{equation}
+	\xi=\frac{\eta\beta}{2G}.
+\end{equation}
+In the absence of the EDM the local spin precession frequency is strictly vertical and $\xi=0$. In the case of non-zero EDM the spin precession axis in the magnetic ring is \cite{JEDI:2023trd}: 
+\begin{equation}
+	\vec{n}=-\sin\xi\cdot\vec{e}_x+\cos\xi\cdot\vec{e}_y.
+\end{equation}
+Using Eq. (\ref{eq:Map}) one can get the spin rotation matrix for a magnetic ring at an angle $\phi_M$:
+\begin{equation}
+	M_{r}=\cos\left(\frac{\phi_M}{2}\right)+i\sigma_1\sin\xi\sin\left(\frac{\phi_M}{2}\right)
+	-i\sigma_3\cos\xi\sin\left(\frac{\phi_M}{2}\right).
+\end{equation}
+For the straight WF there is no EDM rotation in case the net Lorentz force is zero. Then the matrix of spin rotation at an angle $\phi_E$ is:
+\begin{equation}\label{eq:M_WF}
+	M_{WF}=\cos\left(\frac{\phi_E}{2}\right)-i\sigma_3\sin\left(\frac{\phi_E}{2}\right).
+\end{equation} 
+To obtain the measured values at the polarimeter point let us consider a map $M=M_{r}\cdot M_{WF}$ for the full structure up to second order in $\xi$ and assume that the spin rotation in the ring is compensated in the WF:
+
+
+%\begin{multline}\label{}
+%	M=M_{r}\cdot M_{WF}=
+%	I\cdot\left(\cos\left(\frac{\phi_M+\phi_E}{2}\right)+\sin\left(\frac{\phi_M}{2}\right)\sin\left(\frac{\phi_E}{2}\right)\frac{\xi^2}{2}\right)+\\
+%	+i\sigma_1\sin\left(\frac{\phi_M}{2}\right)\cos\left(\frac{\phi_E}{2}\right)\xi-i\sigma_2\sin\left(\frac{\phi_M}{2}\right)\sin\left(\frac{\phi_E}{2}\right)\xi-\\
+%	-i\sigma_3\left(\sin\left(\frac{\phi_M+\phi_E}{2}\right)-\sin\left(\frac{\phi_M}{2}\right)\cos\left(\frac{\phi_E}{2}\right)\frac{\xi^2}{2}\right).
+%\end{multline}
+%
+%Next we assume that the spin rotation in the ring is compensated in the WF:
+\begin{equation}\label{eq:phi_m_2piK}
+	\phi_M+\phi_E=2\pi K, \textup{where}~K\in \mathbb{Z}.
+\end{equation} 
+
+%Then the constant part of the matrix is:
+%\begin{equation}
+%	\frac{1}{2}\textup{tr}\left(M\right)=1-\sin^2\left(\frac{\phi_M}{2}\right)\frac{\xi^2}{2}.
+%\end{equation} 
+
+Using Eq. (\ref{eq:nu_s}) one can get the spin-tune for the structure \cite{Melnikov:2024gcc}:
+\begin{equation}
+	\nu_{s_{-}QFS}\simeq\frac{1}{\pi}\sin\left(\frac{\phi_M}{2}\right)\cdot \xi.
+\end{equation} 
+%\nu_{s_{—}QFS}
+Note that it is linear in the EDM.\\
+According to Eq. (\ref{eq:n}) the $\vec{n}$ lies in the ring plane up to terms linear in $\xi$:
+\begin{equation}\label{eq:n_QFS_ideal}
+	n_x\simeq-\cos\left(\frac{\phi_M}{2}\right),~n_z\simeq-\sin\left(\frac{\phi_M}{2}\right).
+\end{equation}  
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics*[width=0.6\columnwidth]{Matrix_f1}
+	\caption{QFS lattice comprising a magnetic ring and a WF. $\phi_M$ and $\phi_E$ -- corresponding spin rotation angles.}
+	\label{fig:1_Matrix}
+\end{figure}
+
+\subsection{Difference of FS and QFS}
+%in terms of frequency
+
+For the FS structure \cite{Farley:2004hp} from Eq. (\ref{eq:tbmt}) it follows that $\vec{n}=\vec{e}_x$ and the spin-tune is:
+
+\begin{equation}
+	\nu_{s_{-}FS}=\frac{\Omega_{EDM}}{\Omega_{cycl}}=\frac{\eta\beta\gamma}{2}.
+\end{equation}  
+Then the ratio $r$ or the decrement of the EDM signal measured in the QFS structure relative to the FS is \cite{Melnikov:2025gdj}:
+
+\begin{equation}\label{eq:r}
+	r=\frac{\nu_{s_{-}QFS}}{\nu_{s_{-}FS}}=\frac{\sin\left(\frac{\phi_M}{2}\right)}{\frac{\phi_M}{2}}=j_0\left(\frac{\phi_M}{2}\right).
+\end{equation} 
+
+From Eq. (\ref{eq:r}) it follows that to increase the measured EDM signal in the QFS structure it is necessary to decrease the spin rotation angle $\phi_M$
+in the magnetic segment of the ring. Also the integer number of spin revolutions in the magnetic ring doesn't lead to accumulation of the EDM signal. Hence, it is reasonable to consider the structure of the type:
+
+\begin{equation}\label{eq:QFS_condition}
+	\phi_M=-\phi_E,~\phi_M \to 0.
+\end{equation} 
+
+Which is a special case of Eq. (\ref{eq:phi_m_2piK}).\\
+For particles with relatively large value of $G$, e.g. protons, it is necessary to place several pairs of magnetic segments with Wien filters. Also, the direction of the invariant spin axis in the QFS structure (\ref{eq:n_QFS_ideal}) is not strictly radial, in contrast to the case of the FS structure. 
+
+
+
+
+
+
+\subsection{Consideration of imperfection fields}
+\subsection{Spin Precession Axis for a Magnetic Ring with EDM}
+%Let's assume that the magnetic segment of the ring in Fig.~\ref{fig:1} is characterized with misalignments of elements. Let us consider their influence on the spin dynamics using the example of rolls of the bending
+%magnets around the longitudinal axis by an angle $\alpha$ (Fig. \ref{fig:2}).
+%The direction of the spin precession axis in each element has the following form:
+For a simple example of imperfection fields caused by magnet rolls around the longitudinal axis by an angle $\alpha$ the direction of the spin precession axis in each element has the following form:
+\begin{equation}\label{}
+	\vec{n}=\left(-\sin\alpha-\xi \cdot \cos \alpha\right)\vec{e}_x+\left(\cos\alpha-\xi \cdot \sin \alpha\right)\vec{e}_y.
+\end{equation} 
+
+%Note that $|\vec{n}|=1$ up to terms of order $\xi^2$.
+%Then the matrix of spin rotation by angle $\phi_i$ in the element with number $i$ is:
+%\begin{multline}\label{}
+%	M_i=\cos\left(\frac{\phi_i}{2}\right)+i\sigma_1\left(\sin \alpha+\xi \cdot \cos \alpha\right)\sin \left(\frac{\phi_i}{2}\right)-\\
+%	-i\sigma_3\left(\cos \alpha-\xi \cdot \sin \alpha\right)\sin \left(\frac{\phi_i}{2}\right).
+%\end{multline} 
+
+Let us represent the magnetic segment of the ring as a set of misaligned magnets, without loss of generality. Then for $N$ elements one can obtain that \cite{COSY:SpinTuneMapping}:
+\begin{equation}\label{eq:M_r_misal}
+	M_r\left(\vec{n}, \phi\right)=M_r\left(c_y\vec{e}_y+\left[c_x+\xi\right]\vec{e}_x+c_z\vec{e}_z, \phi_{\Sigma}\right).
+\end{equation} 
+
+This expression is obtained in the first order in $\xi$, neglecting terms of the order $\xi \cdot \alpha$ and higher. $c_x, c_y, c_z$ are the components of the spin precession axis for the magnetic ring with misaligned magnets, without the EDM. $\phi_{\Sigma}$ is the total spin rotation angle. 
+
+%\begin{figure}[!htb]
+%	\centering
+%	\includegraphics*[width=0.3\columnwidth]{TUPS033_f2}
+%	\caption{Direction of the spin precession frequencies caused by the MDM and EDM in a magnet rolled around the longitudinal axis by an angle $\alpha$.}
+%	\label{fig:2}
+%\end{figure}
+
+
+
+\subsection{QFS Structure with Imperfection Fields}
+Let us consider a lattice consisting of a magnetic ring with field imperfections and a Wien filter (Fig. \ref{fig:2_Matrix}). We use expression (\ref{eq:M_r_misal}) for the spin rotation matrix in the ring and (\ref{eq:M_WF}) for the Wien filter. Then one can cast the full matrix for the QFS structure as $M=M_{r}\cdot M_{WF}$ and use the property $c_y^2=1-(c_x+\xi)^2-c_z^2$.
+
+%Then the full matrix for the QFS structure is represented as:
+%\begin{multline}\label{}
+%M=M_{r}\cdot M_{WF}=
+%I\cdot\Biggl[\cos\left(\frac{\phi_M+\phi_E}{2}\right)+\\
+%+\sin\left(\frac{\phi_M}{2}\right)\sin\left(\frac{\phi_E}{2}\right)\left(\frac{(c_x+\xi)^2}{2}+\frac{c_z^2}{2}\right)\Biggr]+\\
+%+i\sigma_1\Biggl[\sin\left(\frac{\phi_M}{2}\right)\cos\left(\frac{\phi_E}{2}\right)\left(c_x+\xi\right)-\\
+%-\sin\left(\frac{\phi_M}{2}\right)\sin\left(\frac{\phi_E}{2}\right)c_z\Biggr]\\
+%-i\sigma_2\Biggl[\sin\left(\frac{\phi_M}{2}\right)\cos\left(\frac{\phi_E}{2}\right)c_z+\\
+%+\sin\left(\frac{\phi_M}{2}\right)\sin\left(\frac{\phi_E}{2}\right)(c_x+\xi)\Biggr]-\\
+%-i\sigma_3\Biggl[\sin\left(\frac{\phi_M+\phi_E}{2}\right)-\\
+%-\sin\left(\frac{\phi_M}{2}\right)\cos\left(\frac{\phi_E}{2}\right)\left(\frac{(c_x+\xi)^2}{2}+\frac{c_z^2}{2}\right)\Biggr].
+%\end{multline}
+
+%Here the property $c_y^2=1-(c_x+\xi)^2-c_z^2$ is used.
+
+Similarly to the case of an ideal structure, we obtain expression for the
+spin-tune using properties (\ref{eq:nu_s}) and (\ref{eq:QFS_condition}):
+\begin{equation}
+	\nu_{s_{-}QFS}\simeq\frac{1}{\pi}\sin\left(\frac{\phi_M}{2}\right) \sqrt{(c_x+\xi)^2+c_z^2}.
+\end{equation}
+Linear summation of frequencies caused by the MDM and EDM for $c_x \gg c_z$ allows one to subtract the systematic contribution from the MDM to the measured frequency and detect the EDM signal using the frequency method \cite{Senichev:Freq_domain_method} that will be discussed below.
+
+
+
+\subsection{Spin dynamics perturbations in a resonance state}
+As the radial field perturbations play a decisive role and can mimic the EDM, they will be considered in detail.
+They can arise from rotations of dipole magnets around the longitudinal axis and from vertical shifts of quadrupoles. The latter change the position of the vertical closed orbit $y_{orb}$ in the quadrupoles, and the beam experiences the influence of the dipole component of a radial field: $B_x=\frac{dB_x}{dy}y_{orb}$.\par
+Let us assume that in a storage ring there is a finite number of perturbations distributed at azimuth $\theta$. The latter rotate spins at angles $\psi_i\ll 1$. One can cast the total Map of the ring and apply conditions (\ref{eq:nu_s}), (\ref{eq:n}). In the linear approximation in $\psi$ one can show that summation of perturbations in the observation point is equivalent to the summation of vectors from each unit perturbation. Where the phase of spin rotation in an ideal lattice $\phi$ is taken into account. One can rename spin-tune in a resonance $\nu_{s}=|\epsilon|$ or resonance strength. Here $\mathrm{Re}(\epsilon)$ and $\mathrm{Im}(\epsilon)$ give $n_r$ and $n_z$. Then:
+\begin{equation}\label{eq:nu_s_Magn}
+\epsilon=\frac{1}{2\pi}\sum_{i}^{}{\psi_i\cdot e^{i\phi}}.
+\end{equation}
+
+
+\iffalse
+\subsubsection{Magnetic Ring in Resonance}
+For the magnetic storage ring with rigidity $\chi_m$ spin resonances occur at discrete energies. Integer ones occur at $\gamma G=K, K\in \mathbb{Z}$. Let us assume that there is a finite number of perturbations distributed at azimuth $\theta$ rotating spins at angles $\psi_i\ll 1$. One can cast the total Map of the ring and apply conditions (\ref{eq:nu_s}), (\ref{eq:n}). In the linear approximation in $\psi$ one can observe that summation of perturbations is equivalent to the summation of vectors from each unit perturbation in the structure, taking into account the phase of spin rotation:
+
+
+\begin{equation}\label{eq:nu_s_Magn}
+\nu_{s,\mathbb{C}}=\frac{1}{2\pi}\sum_{i}^{}{\psi_i\cdot e^{iK\theta}}.
+\end{equation}
+Here $\nu_{s,\mathbb{C}}$ is a complex value of a spin-tune for the $K$-th resonance. Renaming $\nu_{s,\mathbb{C}}=\epsilon$ or resonance strength and applying eq. (\ref{eq:TBMT_MDM}) one can get a known expression []:
+\begin{equation}\label{eq:nu_s_Magn1}
+\epsilon_K=\frac{1}{2\pi}(1+G\gamma)\oint\frac{1}{\chi_m}B_xe^{iK\theta}\, dz.
+\end{equation}
+
+\fi 
+
+\subsubsection{Frozen Spin Structure}
+Let us consider a frozen spin structure for searching for the EDM, consisting of E+B Wien filters \cite{CERN_Yellow_report}. The latter allow for the spin to be codirected with the momentum vector: $\vec{S}\parallel \vec{P}$. Moreover, the radial perturbations $\psi_i$ in the structure commute due to the identical transformation of the spin motion from one perturbation to another. By analogy with formula (\ref{eq:nu_s_Magn}), we can assert that the phase of the spin motion is zero in any segment of the FS structure. Then:
+\begin{subequations}\label{eq:FS}
+	\begin{gather}
+	\nu_{s}=\frac{1}{2\pi}\sum_{i=1}^{N}{\psi_i}, \label{eq:FS_1}\\
+	\vec{n} =\vec{e_{r}}, \textup{ if } \sum_{i=1}^{N}\psi_{i}\ne0.\label{eq:FS_2}
+	\end{gather}
+\end{subequations}
+Each radial perturbation results in $\vec{n}$ pointing strictly radial in an observation point. And from (\ref{eq:FS_1}) it follows that the measured spin-precession frequency is the arithmetic average of local frequencies $\Omega_i$ given by the T-BMT equation~(\ref{eq:tbmt}).\par
+It is also worth noting that in a fully magnetic structure, the averaged Lorentz force along a closed orbit is zero, and $\sum_{i=1}^{N}\psi_{i}=0$. In structures with Wien filters acting on spin dynamics only $\sum_{i=1}^{N}\psi_{i}\ne0$.
+
+\subsubsection{Quasi-frozen Spin Structure}
+
+Let us consider a structure of the quasi-frozen spin type for searching for the EDM \cite{Senichev:QFS_IPAC22}, consisting of an ideal magnetic ring and Wien filter insertions at straight sections (Fig.~\ref{fig:1_Matrix}). \par
+\begin{figure}[!htb]
+	\centering
+	\includegraphics*[width=0.7\columnwidth]{Matrix_f2}
+	\caption{QFS lattice with radial perturbations. $\phi$ and $\psi$ -- corresponding spin rotation angles.}
+	\label{fig:2_Matrix}
+\end{figure}
+For the case of two perturbations $\psi_1$ and $\psi_2$ we construct the Map $M_{QFS}(\psi_1,\psi_2)$. In the linear approximation in $\psi$ we get:
+\begin{equation}\label{eq:nu_s_QFS}
+\epsilon=\frac{1}{2\pi}\left[\psi_1e^{i\phi_1}+\psi_2e^{-i\phi_4} \right].
+\end{equation}
+In the case of $N$ perturbations we get:
+\begin{equation}\label{eq:nu_s_QFS_1}
+\epsilon=\frac{1}{2\pi}\left[\sum_{arc}^{}{\psi_ie^{i\phi_{arc}}}+\sum_{WF}^{}{\psi_ie^{-i\phi_{WF}}} \right].
+\end{equation}
+Where
+\begin{equation}\label{eq:nu_s_QFS_2}
+\phi_{arc}=\left(\frac{l}{L_{arc}}\right)\phi_{max}, \textup{  } \phi_{WF}=\left(1-\frac{l}{L_{WF}}\right)\phi_{max}.
+\end{equation}
+From relation (\ref{eq:nu_s_QFS_1}) it follows that the farther the perturbation is from the origin of the arc and the closer
+it is to the origin of the Wien filter, the greater the contribution of the radial perturbation to the longitudinal
+component of $\vec{n}$ at the observation point. Here $l$ is the longitudinal
+coordinate along the arc or Wien filter; $\phi_{max}$ is the maximum spin rotation angle. In the QFS state $\phi_{max}=\left(2\pi/ P\right)\cdot\gamma G$. For the case of the structure in Fig.~\ref{fig:2_Matrix} the periodicity $P=2$. When using particles with a small $G$ factor, for example, deuterons or with increasing the periodicity of the storage ring $\phi_{max}\to 0$. This fact is necessary to increase the accumulated EDM signal \cite{Melnikov:2025ytd}. Moreover, from condition (\ref{eq:nu_s_QFS_1}) it follows that the prevailing direction of spin precession axis is radial:
+\begin{equation}\label{eq:n_QFS}
+\vec{n}\sim\vec{e_r} \textup{  for  } \phi_{max}\to 0.
+\end{equation}
+The QFS resonance strength was estimated in a numerical experiment.The characteristic dipole rotation angle is $10^{-4}$ rad. This corresponds to
+alignment error of 100~$\mu$m over a magnet length of 1 m. The characteristic RMS deviation of the closed orbit in the quadrupoles is 0.5 mm. The main parameters of the structure in Fig.~\ref{fig:2_Matrix} correspond to the NICA collider lattice with bypass channels \cite{Senichev:QFS_IPAC22}. That is, deuterons with a kinetic energy of 240 MeV. The simulation results for estimating the resonance strength are presented in Fig.~\ref{fig:3_Matrix}. The QFS resonance strength was found to be $\epsilon\sim10^{-4}$. This corresponds to an angular velocity of spin rotation of $\Omega\sim500\--1000$ rad/s. A leading contribution from radial perturbations is due to vertical orbit shifts in quadrupoles. The effect of dipole rolls is about one order of magnitude lower: $\epsilon\sim0.5\cdot10^{-5}$. The results of numerical modeling for the radial projection of $\vec{n}$ at the observation point are presented in Fig. \ref{fig:4_Matrix}. This confirms condition (\ref{eq:n_QFS}).\par
+With finite detuning from the QFS state the vertical projection of $\vec{n}$ emerges (Fig. \ref{fig:5_Matrix}). In the single resonance model (SRM) \cite{Mane} for the case of positive detuning $\nu_0$ from resonance with strength $\epsilon$ we obtain:
+% for angular velocity $\vec{\Omega}$:
+\begin{subequations}\label{eq:SRM}
+	\begin{gather}
+	\vec{\Omega}=\nu_0\cdot \vec{e}_y+\epsilon\left[\vec{e}_r\cdot\cos\phi+\vec{e}_z\cdot\sin\phi\right];\Omega=\sqrt{\nu_0^2+\epsilon^2}, \label{eq:SRM_1}\\
+	\vec{n} =\vec{\Omega}/\Omega; \nu_s=\Omega.\label{eq:SRM_2}
+	\end{gather}
+\end{subequations}
+The numerical results in Fig. \ref{fig:5_Matrix} coincide with the SRM prediction. It means that spin resonance description is valid for the QFS state. 
+The corresponding results to conduct the EDM measurement procedure for the QFS state were obtained in a numerical experiment in the COSY Infinity software \cite{Makino:2006sx}.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics*[width=0.6\columnwidth]{Matrix_f3}
+	\caption{Histogram of the QFS resonance strength $\epsilon$, taking into account dipole rolls and orbit shifts in quadrupoles.}
+	\label{fig:3_Matrix}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics*[width=0.6\columnwidth]{Matrix_f4}
+	\caption{Histogram of the radial projection of $\vec{n}$ at the observation point at the straight section in the QFS structure with dipole rolls and orbit shifts in quadrupoles.}
+	\label{fig:4_Matrix}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics*[width=0.7\columnwidth]{Matrix_f5}
+	\caption{Vertical projection of the invariant axis $\vec{n}$ as a function of the spin-tune of the unperturbed structure $\nu_0$. The data represent a QFS structure with radial perturbations. The results obtained in the COSY
+		Infinity environment (blue) are compared with the theoretical dependence in the single resonance model SRM (orange). The data are obtained for one particular realization of element misalignments along the ring.}
+	\label{fig:5_Matrix}
+\end{figure}
+
+
+\subsection{EDM Measurement in a Frequency Domain} 
+The idea to measure the induced MDM+EDM spin precession frequency without the minimization of MDM rotations in the ring was proposed by Yu. Senichev \cite{Senichev:Freq_domain_method}. Here we will summarize the key points.\par
+
+From the T-BMT equation (\ref{eq:tbmt}) it follows that the spin precession frequency $\Omega$ at the observation point is:
+
+\begin{equation}\label{eq:FDM_Omega}
+\Omega=\sqrt{\left({\Omega}_{Br}+{\Omega}_{EDM}\right)^2+{\Omega}_{Bv,Er}^2+{\Omega}_{Bz}^2}.
+\end{equation}
+
+Here ${\Omega}_{Br}$ is the radial component of the measured frequency. It arises due to the misalignments of elements in the absence of the EDM. ${\Omega}_{Bv,Er}$ and ${\Omega}_{Bz}$ are the vertical and longitudinal components respectively. Next we purposely make the radial projection of the frequency vector to be predominant \cite{Senichev:Freq_domain_method}:
+\begin{equation}\label{eq:FDM_condition1}
+\left({\Omega}_{Br}+{\Omega}_{EDM}\right)^2\gg{\Omega}_{Bv,Er}^2,{\Omega}_{Bz}^2.
+\end{equation}
+Then eq. (\ref{eq:FDM_Omega}) can be rewritten as:
+\begin{equation}\label{eq:FDM_Omega1}
+\Omega={\Omega}_{Br}+{\Omega}_{EDM}+\frac{1}{2}\frac{{\Omega}_{Bv,Er}^2+{\Omega}_{Bz}^2}{{\Omega}_{Br}+{\Omega}_{EDM}}.
+\end{equation}
+Next we assure that 
+\begin{equation}\label{eq:FDM_condition2}
+{\Omega}_{EDM}>\frac{1}{2}\frac{{\Omega}_{Bv,Er}^2+{\Omega}_{Bz}^2}{{\Omega}_{Br}+{\Omega}_{EDM}}.
+\end{equation}
+Then the EDM-frequency can be determined from the first two terms in eq. (\ref{eq:FDM_Omega1}) with the beam injection in the opposite direction and calibrating the ${\Omega}_{Br}$ value in the vicinity of the resonance \cite{Senichev:Freq_domain_method}. \par
+
+
+
+
+
+
+
+

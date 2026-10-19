@@ -1,0 +1,298 @@
+\documentclass[submitting]{nst}
+
+\usepackage{subfigure,dcolumn}
+\usepackage{epstopdf}
+\usepackage{mhchem}
+\usepackage{upgreek}
+\usepackage{subfigure}
+\usepackage{physics}
+\usepackage{listings}
+\usepackage{dcolumn}
+
+\begin{document}
+
+%\title{Quasi-frozen spin for both deuteron and proton beam at EDM storage ring and axion search}
+\title{Quasi-frozen spin for both deuteron and proton beam at periodic EDM storage ring lattice}
+%\thanks{Supported by the Program for Science \& Technology Innovation Talents in Universities of Henan Province (No.~13HASTIT046) and the Young Teacher Project in Henan Normal University}
+
+\author{Kolokolchikov S. D.}
+\email[Corresponding author, ]{sergey.bell13@gmail.com}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{Moscow Institute of Physics and Technology, Dolgoprudny 141701, Russia}
+
+\author{Senichev Yu. V.}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{Moscow Institute of Physics and Technology, Dolgoprudny 141701, Russia}
+
+\author{Aksentyev A. E.}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{Moscow Institute of Physics and Technology, Dolgoprudny 141701, Russia}
+\affiliation{National Research Nuclear University MEPhI, Moscow 115409, Russia}
+
+\author{Melnikov A. A.}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{Moscow Institute of Physics and Technology, Dolgoprudny 141701, Russia}
+\affiliation{Landau Institute for Theoretical Physics, Chernogolovka 142432, Russia}
+
+
+\author{Palamarchuka P. I.}
+\affiliation{Institute for Nuclear Research of the Russian Academy of Sciences, Moscow 117312, Russia}
+\affiliation{National Research Nuclear University MEPhI, Moscow 115409, Russia}
+
+\begin{abstract}
+A novel experimental setup with spatially separated magnetic and electrostatic fields is proposed for proton and deuteron electric dipole moment (EDM) studies. The lattice design, which employs a spin compensator to achieve the “quasi-frozen” spin condition for precise measurements, demonstrates adaptability to existing facilities for high energy physics research.
+\end{abstract}
+
+\keywords{Electric dipole moment, Quasi-frozen spin, Wien filter, Electrostatic deflector}
+
+\maketitle
+
+\section{Introduction}\label{sec.I}
+\par The search for the electric dipole moment (EDM) of fundamental particles, such as protons and deuterons, constitutes a critical endeavor in contemporary physics. The EDM offers a unique opportunity to probe CP violation and validate theoretical models that describe particle interactions beyond the framework of the Standard Model \cite{EDM, prec}. Precision EDM measurement of charged particles in accelerator facilities calls for the development of novel methods and techniques that require the existing facilities to adapt in order to meet stringent experimental conditions \cite{CPEDM}.
+
+\par This paper proposes a versatile lattice concept featuring a dynamics between spatially separated magnetic and electrostatic fields, specifically designed to facilitate EDM studies of both deuterons and protons. Special attention is paid to the utilization of Wien filters or electrostatic deflectors with kicker to compensate for the magnetic dipole moment (MDM) precession and to establish conditions conducive to a quasi-frozen spin (QFS) state. The provided analysis demonstrates the adaptability of this concept to a facility not originally designed for such experiments and explores its potential for promoting EDM research at higher energy ranges, as well as axion-like particle search.
+ 
+\section{Quasi-frozen spin at periodic lattice}\label{sec.II}
+
+\par A particle ensemble admits of spin behavior representation by means of a classical vector and its dynamics in external electromagnetic fields is described by the Thomas-Bargmann-Michel-Telegdi (T-BMT) equation \cite{TBMT}
+
+\begin{equation}
+	\begin{aligned}
+		\dv{\vec{\mathrm{S}}}{t} = & \left(\vec{\Omega}_{\text{MDM}}+\vec{\Omega}_{\text{EDM}}\right)\times\vec{\mathrm{S}}, \\
+		\vec{\Omega}_{\text{MDM}}  = & - \frac{q}{m \gamma}\left\{(\gamma G+1) \vec{\mathrm{B}}_{\perp}+(G+1) \vec{\mathrm{B}}_{\|}-\right. \\
+								     & \left.-\left(\gamma G+\frac{\gamma}{\gamma+1}\right) \frac{\vec{\beta} \times \vec{\mathrm{E}}}{c}\right\}, \\
+		\vec{\Omega}_{\text{EDM}}  = & - \frac{q \eta}{2 m}\left(\vec{\beta} \times \vec{\mathrm{B}}+\frac{\vec{\mathrm{E}}}{c}-\frac{\gamma}{\gamma+1}\frac{\vec{\beta}}{c}\left(\vec{\beta}\cdot\vec{E}\right)\right),
+	\end{aligned}
+	\label{eq:T-BMT}
+\end{equation}
+
+\noindent where $\vec{\Omega}_{\text{MDM}}, \vec{\Omega}_{\text{EDM}}$ are the precession frequencies due to magnetic and electric dipole moments, $\vec{\mathrm{E}}, \vec{\mathrm{B}} = \vec{\mathrm{B}}_{\perp} + \vec{\mathrm{B}}_{\|}$ are external magnetic and electric fields. $m, q$ are the mass and charge of a particle, $\gamma$ is the Lorentz factor. The dimensionless $\eta$ factor is connected to the EDM value $d$ and the spin $s$ of the particle: $d = \frac{\eta g}{2mc}s$, $G=\frac{g-2}{2}$ is the anomalous magnetic moment. 
+
+\par For EDM measurements, it is first necessary to compensate for the MDM-effect. The simplest approach, initially proposed at BNL \cite{BNL}, is based on the frozen spin method and uses an all-electric lattice, directly measuring spin precession due to a non-zero EDM in radial electric field. This method requires the use of pure-electric optical elements and the lattice must be specifically designed for and operated with protons.
+\par An alternative approach is the quasi-frozen spin concept, based on the idea of asynchronous spin precession compensation \cite{QFS}. This leads to spin-vector oscillations back and forth relative to the momentum vector at one period and as a result at full ring.
+
+\subsection{Relative spin motion at QFS}    
+
+\par Let us introduce the QFS concept by examining orbital and spin rotation in a generalized framework. This approach is based on the dynamics governed by the Lorentz force for orbital motion and the T-BMT equation for spin precession. The foremost QFS condition that needs to be respected is that the orbital trajectory remains unperturbed, maintaining a closed orbit configuration.
+
+\begin{equation}
+	\Phi_p^{\textrm{arc}}+\Phi_{p}^{\textrm{comp}}=\frac{2\pi}{N},\ \ \
+	\label{eq:QFS_orbital}
+\end{equation}
+
+\noindent where index $p$ stands for momentum, $\Phi_p^{\textrm{arc}}$ and $\Phi_{p}^{\textrm{comp}}$ are the total momentum rotations in the arcs and the spin compensator elements, $N$ is the lattice periodicity. To set up a lattice suitable for high-energy researches, it is essential to employ a pure magnetic guiding field on arc, given the limitations of achievable electric field strengths. Then for QFS lattice a corresponding spin compensator should be implemented at straight section without perturbing the orbit. The conditions this device should satisfy can be formulated as $\Phi_p^{\textrm{arc}} = \frac{2\pi}{N}$ and $\Phi_{p}^{\textrm{comp}} = 0$. The second condition is met through employing both magnetic and electric fields. From Eq. \ref{eq:QFS_orbital} for spin compensation element with both magnetic and electric field
+
+\begin{equation}
+	\Phi_{p\textrm{B}}^{\textrm{comp}}+{\Phi}_{p\textrm{E}}^{\textrm{comp}} = 0,\ \ \ 
+\end{equation}
+
+\noindent where $\Phi_{p\textrm{B}}^{\textrm{comp}}$ and ${\Phi}_{p\textrm{E}}^{\textrm{comp}}$ are total momentum rotations in magnetic and electric field at spin compensation. One can see from the T-BMT equation \ref{eq:T-BMT} that the electric field acts on spin with a maximum effectiveness when it is radial to the momentum. Moreover, it is also maximally efficient with respect to the momentum rotation, which means
+
+\begin{equation}
+	\vec{\Omega}_{p\mathrm{E}}^{\text{max}} = \vec{\Omega}_{p\mathrm{E}_{\perp}}=\frac{q}{m \gamma} \frac{\vec{\beta} \times \vec{\mathrm{E}}_{\perp}}{c \beta^2}.
+\end{equation}
+
+\par The secondmost QFS condition that needs to be respected is to compensate MDM spin rotation in one period of the ring 
+
+\begin{equation}
+	\Phi_s^{\textrm{arc}}+\Phi_{s}^{\textrm{comp}}=0,
+	\label{eq:QFS_spin}
+\end{equation}
+
+\noindent where $\Phi_s^{\textrm{arc}}$ and $\Phi_{s}^{\textrm{comp}}$ are the total spin rotations in the arc and the spin compensator. The spin and orbital rotation angles (the $\Phi_{s}$ and $\Phi_{p}$ respectively) are connected by the so-called spin tune ratio, given in the magnetic and electric fields as follows:
+
+\begin{equation}
+	\nu_{\mathrm{B}_{\perp}} = \gamma G, \quad \nu_{\mathrm{E}} = \gamma \beta^2 \left(G-\frac{1}{\gamma^{2}-1}\right).
+	\label{eq:spin-tine}
+\end{equation} 
+
+ \noindent The spin tune difference is responsible for the compensation effect. In the pure magnetic arc $\Phi_{s}^{\text{arc}} = \nu_{\mathrm{B}_{\perp}}\Phi_{p}^{\text{arc}}$, while in the spin compensator $\Phi_{s\mathrm{B}}^{\text{comp}} = \nu_{\mathrm{B}_{\perp}}\Phi_{p\mathrm{B}}^{\text{comp}}$ and $\Phi_{s\mathrm{E}}^{\text{comp}} = \nu_{\mathrm{E}}\Phi_{p\mathrm{E}}^{\text{comp}}$. Then Eq. \ref{eq:QFS_spin} could be rewritten as
+ 
+ \begin{equation}
+ 	\begin{aligned}
+ 	\nu_{\mathrm{B}_{\perp}}\Phi_{p}^{\text{arc}} +
+ 	\left(\nu_{\mathrm{B}_{\perp}}\Phi_{p\mathrm{B}}^{\text{comp}} +
+ 	\nu_{\mathrm{E}}\Phi_{p\mathrm{E}}^{\text{comp}} \right) & = \\
+ 	= \nu_{\mathrm{B}_{\perp}} \left( 
+ 	\Phi_{p}^{\text{arc}} +
+ 	\Phi_{p\mathrm{B}}^{\text{comp}} \right) +
+ 	\nu_{\mathrm{E}}\Phi_{p\mathrm{E}}^{\text{comp}}  & = 0.
+ 	\label{eq:deflection}
+ 	\end{aligned}
+ \end{equation}
+  
+ \par Finally, combining the first and second QFS conditions the compensator electric and magnetic field spin rotation expressions can be obtained:
+
+\begin{equation}
+	\Phi_{p\mathrm{E}}^{\textrm{comp}} = - \Phi_{p\mathrm{B}}^{\textrm{comp}} = {\Phi}_{p}^{\text{arc}}\frac{\gamma^2 G}{G+1} =\frac{2\pi}{N}\frac{\gamma^2 G}{G+1}.
+	\label{eq:deflection}
+\end{equation}
+
+\noindent Note that so far no mention was made of the physical structure of the compensation element, only of the integral features of the presented field components.
+
+\subsection{Spin compensation element length}
+
+Spin compensation element length can be calculated as follows
+
+\begin{equation}
+	L = \Phi_{p\mathrm{B}}^{\text{comp}}R_{\mathrm{B}} = \Phi_{p\mathrm{E}}^{\text{comp}}R_{\mathrm{E}},
+	\label{eq:length}
+\end{equation}
+
+\noindent where $R_{\mathrm{B}}, R_{\mathrm{E}}$ are the radii of magnetic and electric fields. In general, total radius for element with combined magnetic and electric fields can be found as
+
+\begin{equation}
+	\frac{1}{R} = \frac{1}{R_{\mathrm{B}}}+\frac{1}{R_{\mathrm{E}}}, \quad R_{\mathrm{B}}=\frac{\mathrm{B}\rho}{\mathrm{B}}, \quad R_{\mathrm{E}}=\frac{\kappa}{\mathrm{E}},    
+	\label{eq:total_radius}
+\end{equation}
+
+\noindent where $\mathrm{B}\rho = \cfrac{p_{0}}{e}$ is the magnetic rigidity, $p_{0} = \gamma m\beta c$, $\kappa = \cfrac{p_{0}\beta c}{e}$ is the electrical rigidity. Since the element must satisfy the zero net orbital distortion condition, the Lorentz force should be zero, so $R=0$ and $R_{\mathrm{B}} = -R_{\mathrm{E}}$. The electric field strength limitation is much more stringent than that of the magnetic field. The compensator length per one period can be obtained from Eqs. \ref{eq:deflection} and \ref{eq:length}:
+
+\begin{equation}
+	\begin{aligned}
+	L_{\text{min}} = \Phi_{p\mathrm{E}}^{\text{comp}}R_{\mathrm{E}} & = 
+	\frac{2\pi}{N}\frac{\gamma^2 G}{G+1}\frac{\kappa}{\mathrm{E}_{\text{max}}} = \\
+	& = \frac{2\pi}{N}\frac{G}{G+1}\frac{mc^2}{e}\frac{\gamma(\gamma^2-1)}{\mathrm{E}_{\text{max}}},
+	\label{eq:length_min}
+	\end{aligned}
+\end{equation}
+
+\noindent where $\mathrm{E}_{\text{max}}$ is the maximum electric field, which limits the minimal achievable length regardless the researched particle. The total length $L=L_{\text{min}}^{\text{total}} = N\cdot L_{\text{min}}$ is independent from number of periods. Maximum attainable electric fields are 10-13 MV/m \cite{wien}, this corresponds to a magnetic field of the order of 70-90 mT accordingly. This will be used later for evaluation.
+
+\section{Features of Proton and deuteron}\label{sec.III}
+
+\subsection{Dependence on beam parameters}
+
+\par The first thing that needs to be accounted for an efficient analysis of the spin dynamics is the polarimeter analyzing power. It depends on the beam energy and has to be maximal to achieve a sufficient statistics. The maximum figure of merit of the polarimeter is reached at a proton beam energy of 270  MeV \cite{Pol} and the same is true for deuterons \cite{Pol_d}. 
+
+\par Next, orbital and spin dynamics vary among different types of particles. In the first place, the deuteron mass-to-charge ratio two times more than for proton. In the second place, anomalous magnetic moments are notably different: the proton $G_{\text{p}} = 1.79$ and the deuterons $G_{\text{d}} = -0.14$. These differences gathered in Table \ref{tab:particles} and call for a tailored approach to each particle type when designing experiments as well as when analyzing results.
+
+\begin{table}[!htb]
+	\caption{Particles and experiment parameters.}
+	\label{tab:particles}
+	\begin{tabular*}{8cm} {@{\extracolsep{\fill} } lccccc}
+		\toprule
+		Particle & $A/Z$ & $G$     & $\gamma_{\text{exp}}$ & $E_{\text{exp}}$, MeV/u & $L$, m \\
+		\midrule
+		Deuteron $\text{d}$ & $2$   & $-0.14$ & $1.144$  & $135$ & $53$ \\
+		Proton $\text{p}$ & $1$   & $1.79$  & $1.289$ & $270$ & $247$ \\
+		&    &   & $1.078$ & $73$ & $53$ \\
+		\bottomrule
+	\end{tabular*}
+\end{table}
+
+\par In a magnetic field, according to Eq. \ref{eq:spin-tine} the direction of spin precession depends solely on the sign of the anomalous magnetic moment -- i.e. it is independent of energy. However, the magnitude is influenced by both the energy and the absolute value of the anomalous magnetic moment. For protons this effect is so important that care must be taken to assure the spin-vector rotation per arc $\gamma G \cdot \Phi_{p}^{\text{arc}} < \pi/2$ in order to preserve the accumulation of the EDM effect for the longitudinally polarized beam. This implies that QFS lattices only with a periodicity $N=8$ or larger provide the means to measure the proton EDM.
+
+\par To be more precise, an EDM measurement under QFS conditions is attenuated relative to a frozen spin measurement. To first order the attenuation factor is given by \cite{consider}
+
+\begin{equation}
+	J_{0}(\Phi_s^{\textrm{arc}})=1-\frac{{\Phi_s^{\textrm{arc}}}^2}{4},
+	\label{eq:edm}
+\end{equation}
+
+\noindent where $\Phi_s^{\textrm{arc}}$ represents the angle associated with the MDM-effect in the arc in one period. For various particle types and structure periodicities it is cited in Table \ref{tab:edm}. The maximum periodicity considered is $N=16$, due to lattice design limitations. The table shows that the frozen and quasi-frozen spin regimes are practically the same for deuterons. For protons, only the 16-periodic lattice offers a real opportunity of a practical tests of the QFS approach.
+
+\begin{table}[!htb]
+	\caption{Parameters of lattices and experiment at beam energy of $270$ MeV.}
+	\label{tab:edm}
+	\begin{tabular*}{8cm} {@{\extracolsep{\fill} } lccccc}
+		\toprule
+		Particle & $N$ & $\Phi_s^{\textrm{arc}}$, deg & $J_{0}(\Phi_s^{\textrm{arc}})$ \\
+		\midrule
+		Deuteron $\text{d}$ & $2$   & $-29.45$ & $0.934$ \\
+				 			& $4$   & $-14.72$ & $0.983$ \\
+				 			& $8$   & $-7.36$ & $0.996$ \\
+				 			& $16$   & $-3.68$ & $0.999$ \\
+		Proton $\text{p}$ & $8$  &  $103.83$	   & $0.179$\\
+						  & $16$  &  $51.91$	   & $0.795$\\
+		\bottomrule
+	\end{tabular*}
+\end{table}
+
+\par In electrostatic fields, the analysis of deuteron and proton behaviors is further complicated by their distinct interactions with the field. For protons, the direction of spin rotation can depend on the energy, particularly around the "magic" energy, where $\gamma_{\text{mag}} = \sqrt{\cfrac{G_{\text{p}}+1}{G_{\text{p}}}} = 1.248$ ($E_{\text{mag}} = 233$ MeV). Any way the influence on proton is much lower than for deuterons as shown at Fig. \ref{fig:spin-tune}. For deuterons, on the other hand, there is no equivalent "magic" energy, and their spin rotation behavior remains consistent across the entire energy range.\\
+
+% TODO: \usepackage{graphicx} required
+\begin{figure} [h!]
+	\centering
+	\includegraphics[width=0.95\linewidth]{spin-tune_ratio}
+	\caption{Spin-tune ratio $\kappa = \cfrac{\nu_{\mathrm{B}_{\perp}}}{\nu_{\mathrm{E}}}$ for deuteron and proton.}
+	\label{fig:spin-tune}
+\end{figure}
+
+\par These fundamental differences lead to several important consequences for lattice construction. Specifically, modifications are necessary to accommodate both particle types. First, according to Eq. \ref{eq:deflection} the direction of spin rotation differs between proton and deuteron. This shows the necessity of either switching the polarity of the spin compensator's fields or rotating it by $\pi$ along the longitudinal axis. Second, the minimal achievable spin compensator length as given by Eq. \ref{eq:length_min}, is longer for proton than it is for deuterons at optimal the polarimeter energy. This discrepancy can be addressed by lowering the experimental energy for protons (Fig. \ref{fig:totallength}). At a spin compensator length equivalent to that used for deuterons, the proton energy should be reduced to 73 MeV, correspondingly the analyzing power decreases by a factor of 2-3. Third, two viable approaches for arranging additional EM-fields are the implementation of a Wien filter or an electrostatic deflector with a kicker.
+
+% TODO: \usepackage{graphicx} required
+\begin{figure} [h!]
+	\centering
+	\includegraphics[width=0.95\linewidth]{total_length}
+	\caption{Total length of spin compensator vs Energy per nucleon in order to make QFS lattice for deuteron and proton.}
+	\label{fig:totallength}
+\end{figure}
+
+\subsection{Wien filter}
+
+\par The Wien filter serves an important function in a particle accelerator, designed to manipulate spin dynamics without altering the orbital trajectory of particles by utilizing perpendicular electric and magnetic fields that cancel each other out, resulting in zero net Lorentz force. As the EDM T-BMT term is proportional to the Lorentz force, the Wien filter will not exert an EDM force on the spin-vector. It is EDM-transparent. It allows particles to move in a straight line while enabling a precise correction of their spin orientations, making it an ideal auxiliary device for experiments requiring spin manipulation. It provides the conditions to facilitate spin navigation. The filter's design ensures a net absence of deflection along the beamline, minimizing additional space requirements in the ring's straight sections and allowing for a classical sequential arrangement of ring elements. 
+
+\par It is evidently usable for both deuterons and protons; for deuterons, it can be employed directly at optimal energies, while for protons, the polarity must be switched or the setup rotated by $\pi$ along the longitudinal axis and used at lower energies (Fig. \ref{fig:wien-filter}). This flexibility allows for freedom in developing methods for studying spin dynamics across different particle types. Overall, the Wien filter's ability to control particle spin without perturbing orbital paths makes it an invaluable component in advanced accelerator experiments.
+
+% TODO: \usepackage{graphicx} required
+\begin{figure} [h!]
+	\centering
+	a. Deuteron\\
+	\includegraphics[width=0.8\linewidth]{wien-filter_deuteron}\\
+	b. Proton\\
+	\includegraphics[width=0.8\linewidth]{wien-filter_proton}
+	\caption{One period conceptual scheme of QFS lattice with Wien filters for a. deuterons, b. protons.}
+	\label{fig:wien-filter}
+\end{figure}
+
+\subsection{Electrostatic deflector with kicker}
+
+\par The pure electrostatic deflector was designed to manipulate particle trajectories and spin dynamics by creating a radial electric field with a non-zero curvature. Unlike the Wien filter, this deflector requires an additional kicker to compensate for orbital deviations, which increases the overall length of the compensator. This setup is particularly useful for creating bypass sections in addition to the native straight sections, allowing for flexible experimental configurations (Fig. \ref{fig:el-defdeuteron}). But it should be considered distance between the spatial assignment of equipment to enable option with independent section. A key challenge is that each type of particle requires a different curvature, which must be determined at the outset of lattice design. Despite these complexities, the electrostatic deflector with kicker offers a robust solution for controlling particle spin and trajectory.
+
+% TODO: \usepackage{graphicx} required
+\begin{figure} [!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{el-def_deuteron}
+	\caption{One period conceptual scheme of QFS lattice with electrostatic deflector and kicker for deuterons.}
+	\label{fig:el-defdeuteron}
+\end{figure}
+
+
+\section{Further researches}\label{sec.IV}	
+
+\par Currently, the proposed energy requirements for EDM studies are set at 270 MeV and lower, but specific conclusions regarding the arc spin rotation have yet to be drawn. The primary condition is to achieve a momentum rotation at a specific angle $\Phi_p^{\textrm{arc}}$ with a corresponding $\Phi_s^{\textrm{arc}}$ for the spin. This can be accomplished by a careful selecting of the magnetic field integral to ensure precise alignment of momentum and spin dynamics. To maximize efficiency, the magnetic field should be as strong as possible to minimize the effective arc length, in consideration of the unique features of the lattice design. This approach not only optimizes studies at the current energy range but also opens the possibility for other polarized or non-polarized beam research at higher energies, potentially reaching several GeV. The versatility of the QFS setup allows it to be implemented in various lattice designs, including existing accelerator rings, thereby facilitating advanced studies at elevated energy ranges.
+
+\par Wien filters do not affect beam dynamics and influence only the spin motion. This helps in converting the storage ring into a broadband axion antenna \cite{axion, axion_nica}.
+
+\section{Summary} \label{sec.V}
+
+\par This article presents the implementation of a quasi-frozen spin setup in a periodic lattice to study the Electric Dipole Moments of charged light particles. The design achieves precise spin compensation of the MDM-effect per one period by employing elements with matched curvatures for electric and magnetic fields, allowing for effective spin manipulation. Either Wien filters, which do not cause beam deflection, or electrostatic deflectors, which enable bypass creation, are imperative to the flexibility of this concept. An expression for the optimal spin compensator length is derived. Notably, the setup allows for the investigation of proton EDM using the same ring as for deuterons, simply by switching the polarity or rotating the spin compensator by $\pi$ and operating at a reduced energy. The study demonstrates the versatility of the quasi-frozen spin lattice, which can be adapted for multiple purposes, including higher-energy research within existing facilities and axion-like particle search.
+
+\section*{ACKNOWLEDGMENTS}
+
+\par A support of thus study by the Russian Science Foundation grant 25-72-30005 is acknowledged.
+
+\begin{thebibliography} {99}
+	\bibitem{EDM} T.Chupp, P.Fierlinger, M.Ramsey-Musolf, J.Singh, Electric dipole moments of atoms, molecules, nuclei, and particles. Rev. Mod. Phys. \textbf{91}, 015001 (2019). doi:10.1103/RevModPhys.91.015001
+	\bibitem{prec} S.N.Vergeles, N.N.Nikolaev, Yu.N.Obukhov, A.Ya.Silenko, O.V.Teryaev, General relativity
+	effects in precision spin experimental tests of fundamental symmetries. Phys. Usp. \textbf{66(2)}, 109-
+	147 (2023). doi:10.3367/UFNe.2021.09.039074
+	\bibitem{CPEDM} F.Abusaif et al. (CPEDM Collaboration), Storage ring to search for electric dipole moments of charged particles: Feasibility study, CERN Yellow Reports: Monographs, \textbf{3}, CERN-2021-003, 246 (2021). doi:10.23731/CYRM-2021-003
+	\bibitem{TBMT} V.Bargmann, L.Michel, V.L.Telegdi, Precession of the Polarization of Particles Moving in a Homogeneous Electromagnetic Field. Phys. Rev. Lett. \textbf{2}, 435 (1959). doi:10.1103/PhysRevLett.2.435
+	\bibitem{BNL} V.Anastassopoulos et al., A Storage Ring Experiment to Detect a Proton Electric Dipole Moment. Rev.Sci.Instrum. \textbf{87}, 115116 (2016). doi:10.1063/1.4967465
+	%\bibitem{AGS} D.Anastassopoulos et al., AGS proposal: Search for a permanent electric dipole moment of the deuteron nucleus at the $10^{-29}$ $e\cdot$cm level. \url{https://www.bnl.gov/edm/files/pdf/deuteron_proposal_080423_final.pdf}. April, 2008
+	\bibitem{QFS} Yu.Senichev et al., in \textit{ICAP2015 Proccedings}, Shanghai, 2016, ed. by C.Kwok, R.W.Volker, T.Chuanxiang, Y.Heping
+	\bibitem{wien} A.Aggarwal, A.Magiera, Controlling Systematic Uncertainties in Search for an EDM in the Storage Ring. Acta Phys. Pol. B \textbf{51}, 373 (2020) doi:10.5506/APhysPolB.51.373
+	\bibitem{Pol} M.W.Mcnaughton el al., THE P C ANALYZING POWER BETWEEN 100-MEV AND 750-MEV. Nuc. Inst. and Meth. in Phys. Res. Sec. A \textbf{241}, 435-440 (1985). doi:10.1016/0168-9002(85)90595-9
+	\bibitem{Pol_d} F.Müller et al., Measurement of deuteron carbon vector analyzing powers in the kinetic energy range 170-380 MeV. Eur. Phys J. A \textbf{58}, 211 (2020). doi:10.1140/epja/s10050-020-00215-8
+	\bibitem{consider} Y.V.Senichev, A.E.Aksentyev, S.D.Kolokolchikov et al., Consideration of an Adapted Nuclotron Structure for Searching for the Electric Dipole Moment of Light Nuclei. Phys. Atom. Nuclei \textbf{86}, 2434–2438 (2023). doi:10.1134/S1063778823110418
+	\bibitem{axion} A.J.Silenko, Relativistic spin dynamics conditioned by dark matter axions. Eur.Phys.J.C \textbf{82} 856 (2022). doi:10.1140/epjc/s10052-022-10827-7
+	\bibitem{axion_nica} N.N.Nikolaev, Spin of protons in NICA and PTR storage rings as an axion antenna. Jetp Lett. \textbf{115}, 639–643 (2022). doi:10.1134/S0021364022600653
+%\bibitem{b1}	M. Huang, Z. Chen, S. Kowalski et al., Isobaric yield ratios and the symmetry energy in heavy-ion reactions near the Fermi energy. Phys. Rev. C {\bf 81}, 044620 (2010).   \href{http://dx.doi.org/10.1103/PhysRevC.81.044620}{doi: 10.1103/PhysRevC.81.044620}
+%\bibitem{b2}	M. Huang, A. Bonasera, Z. Chen et al., Isospin dependence of the nuclear equation of state near the critical point. Phys. Rev. C {\bf 81}, 044618 (2010).   \href{http://dx.doi.org/10.1103/PhysRevC.81.044618}{doi: 10.1103/PhysRevC.81.044618}
+
+\end{thebibliography}
+
+\end{document}
+
