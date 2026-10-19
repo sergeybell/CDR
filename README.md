@@ -42,6 +42,8 @@ Physical Review, поэтому библиография, цитирования
 pdflatex main && bibtex main && pdflatex main && pdflatex main
 ```
 
+Готовый `latex/main.pdf` лежит в репозитории — его можно скачать с GitHub без локальной сборки.
+
 ### `support/` — вспомогательные скрипты
 
 | Скрипт | Зачем |
